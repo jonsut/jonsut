@@ -1,2 +1,3 @@
 preview/
 data/agent-days.json
+__pycache__/
