@@ -5,11 +5,23 @@ loaded when an SVG renders inside an <img> tag, which is how GitHub embeds it.
 Outlines also mean no font binary is redistributed.
 """
 
+import os
+
 import uharfbuzz as hb
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 
-FONTS = "/Users/jonsutton/Library/Fonts"
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+
+# Paths are derived rather than absolute: this file is public, and hard-coded
+# home directories disclose a username and local layout for no benefit.
+FONTS = os.path.expanduser("~/Library/Fonts")
+# Identity assets live in the website repo; override if it sits elsewhere.
+IDENTITY = os.environ.get(
+    "JONMARK_SVG",
+    os.path.expanduser("~/IdeaProjects/jonsut/site/public/identity/jon-avatar.svg"),
+)
 DISPLAY_SEMIBOLD = f"{FONTS}/PPNeueMontreal-Semibold.otf"
 DISPLAY_REGULAR = f"{FONTS}/PPNeueMontreal-Regular.otf"
 TEXT_BOOK = f"{FONTS}/PPNeueMontrealText-Book.otf"
@@ -88,7 +100,7 @@ BLOB = (
     "98.8849C-2.35312 24.4947 6.72481 13.2844 81.115 5.46564Z"
 )
 
-with open("/Users/jonsutton/IdeaProjects/jonsut/site/public/identity/jon-avatar.svg") as fh:
+with open(IDENTITY) as fh:
     avatar = fh.read()
 face_path = avatar.split('class="jon-avatar__foreground" d="')[1].split('"')[0]
 
@@ -122,7 +134,7 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
 </svg>
 """
 
-out = "/Users/jonsutton/IdeaProjects/jonsut-profile/header.svg"
+out = os.path.join(ROOT, "header.svg")
 with open(out, "w") as fh:
     fh.write(svg)
 print(f"wrote {out} ({len(svg)} bytes), label run width {label_w:.1f}px")
