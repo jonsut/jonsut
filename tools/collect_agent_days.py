@@ -1,8 +1,16 @@
 """Count daily Claude Code activity from local session transcripts.
 
-This one cannot run in CI: the transcripts live on Jon's machine, not in the repo.
-So collection is local and only the derived counts are committed, which the Action
-then renders like any other series.
+Parked, but kept running as a log. Its output, data/agent-days.json, is gitignored
+and stays on this machine. Publishing a daily activity graph would disclose working
+patterns, and gaps in it invite inference, so nothing here goes public until that is
+a deliberate decision rather than a side effect of the file existing.
+
+Worth running periodically regardless: Claude Code deletes transcripts older than
+cleanupPeriodDays (default 30), so anything not captured before then is gone for
+good. This file is the only durable record.
+
+This cannot run in CI either way, because the transcripts live on Jon's machine and
+not in the repo.
 
 Deliberately narrow output. It records a date, a number of prompts and a number of
 sessions, and nothing else. No project names, no paths, no message content, no
