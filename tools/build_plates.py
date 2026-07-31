@@ -114,6 +114,27 @@ HEAD_H = 34
 GRID_X = PAD + DAY_GUTTER
 DAY_LABELS = {0: "Mon", 2: "Wed", 4: "Fri"}
 
+# Headline icons, from Unicons by Iconscout (see assets/ICONS.md for the licence).
+# Kept inline rather than read from disk so the daily job has one less file that
+# can go missing, and so the licence comment travels with the artwork.
+ICON_BOX = 24
+ICON_SIZE = 19
+ICON_GAP = 8
+HEAD_SIZE = 16
+CAP = 0.72                           # cap height of the system sans, near enough
+HEAD_BASE = HEAD_H - 12
+# All three are drawn centred on the 24-unit box, so one placement aligns the set
+# and no per-icon nudge is needed. Centred on the headline's cap band rather than
+# its baseline, which is where the eye reads the line as sitting.
+ICON_X = 0
+ICON_Y = HEAD_BASE - CAP * HEAD_SIZE / 2 - ICON_SIZE / 2
+TEXT_X = ICON_SIZE + ICON_GAP
+ICONS = {
+    "temperature": ("""<!-- Icon from Unicons by Iconscout - https://github.com/Iconscout/unicons/blob/master/LICENSE --><path fill="currentColor" d="M13 15.28V5.5a1 1 0 0 0-2 0v9.78A2 2 0 0 0 10 17a2 2 0 0 0 4 0a2 2 0 0 0-1-1.72M16.5 13V5.5a4.5 4.5 0 0 0-9 0V13a6 6 0 0 0 3.21 9.83A7 7 0 0 0 12 23a6 6 0 0 0 4.5-10m-2 7.07a4 4 0 0 1-6.42-2.2a4 4 0 0 1 1.1-3.76a1 1 0 0 0 .3-.71V5.5a2.5 2.5 0 0 1 5 0v7.94a1 1 0 0 0 .3.71a4 4 0 0 1-.28 6Z"/>"""),
+    "rainfall": ("""<!-- Icon from Unicons by Iconscout - https://github.com/Iconscout/unicons/blob/master/LICENSE --><path fill="currentColor" d="M8.5 19a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1m0-5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1M21 7h-.8a4.3 4.3 0 0 0-.52-1.27l.56-.56a1 1 0 0 0-1.41-1.41l-.56.56A4.3 4.3 0 0 0 17 3.8V3a1 1 0 0 0-2 0v.8a4.1 4.1 0 0 0-1.26.52l-.57-.56a1 1 0 0 0-1.41 1.41l.56.57c-.09.15-.16.32-.24.48A6 6 0 0 0 10.5 6a6 6 0 0 0-5.94 5.13a3.5 3.5 0 0 0-.46 6.58a1.1 1.1 0 0 0 .4.08a1 1 0 0 0 .4-1.92A1.48 1.48 0 0 1 4 14.5A1.5 1.5 0 0 1 5.5 13a1 1 0 0 0 1-1a4 4 0 0 1 7.78-1.29a1 1 0 0 0 .78.67a2.32 2.32 0 0 1 .94 4.23a1 1 0 0 0 1.1 1.68a4.34 4.34 0 0 0 1.9-3.62a4.2 4.2 0 0 0-.3-1.55l.13.12a1 1 0 0 0 .7.29a1 1 0 0 0 .71-.29a1 1 0 0 0 0-1.41l-.56-.56A4.3 4.3 0 0 0 20.2 9h.8a1 1 0 0 0 0-2m-3.34 2.65a2.1 2.1 0 0 1-.6.42A4.2 4.2 0 0 0 16 9.54a6.1 6.1 0 0 0-2.09-2.49a2.4 2.4 0 0 1 .46-.7a2.43 2.43 0 0 1 3.3 0a2.37 2.37 0 0 1 0 3.3ZM12.5 18a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1m0-5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1"/>"""),
+    "particulates": ("""<!-- Icon from Unicons by Iconscout - https://github.com/Iconscout/unicons/blob/master/LICENSE --><path fill="currentColor" d="M13.23 2.003a7.37 7.37 0 0 0-5.453 2.114A7.44 7.44 0 0 0 5.5 9.465l-1.844 2.998a1 1 0 0 0-.156.52v.04a1 1 0 0 0 .07.347l1.44 3.873a1 1 0 0 0 .043.099A2.98 2.98 0 0 0 7.736 19H8.5v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 .321-.053l3.7-1.256a1 1 0 0 0 .018.12l1 3.466A1 1 0 0 0 18.5 22a1 1 0 0 0 .277-.04a1 1 0 0 0 .684-1.237l-.924-3.2l1.93-7.267A1 1 0 0 0 20.5 10v-.228a7.7 7.7 0 0 0-7.27-7.769M11.5 17H7.736a1 1 0 0 1-.874-.513L5.938 14H11.5Zm5.523-1.591L13.5 16.605V13.72l4.345-1.448Zm1.412-5.389a1 1 0 0 0-.251.031L12.337 12H6.29l1.074-1.747a1 1 0 0 0 .148-.562L7.5 9.5a5.46 5.46 0 0 1 1.67-3.947a5.52 5.52 0 0 1 4-1.55a5.685 5.685 0 0 1 5.33 5.77Z"/>"""),
+}
+
 
 def band(value, cuts):
     return next((i for i, cut in enumerate(cuts) if value < cut), len(cuts))
@@ -135,7 +156,18 @@ def render(key, spec, start, end, path):
     # Diverging plates share ALPHA; a sequential one supplies its own.
     alpha = spec.get("alpha", ALPHA)
     first_monday = start - timedelta(days=start.weekday())
-    parts = [f'<text class="head" x="0" y="{HEAD_H - 12}">{spec["head"]}</text>']
+
+    # The label and the sentence live in one <text> as tspans so they flow inline.
+    # These plates render in whatever sans the reader has, which cannot be measured
+    # here, so positioning the sentence after a fixed-width label is not an option.
+    # A non-breaking space between them survives XML whitespace collapsing.
+    scale = ICON_SIZE / ICON_BOX
+    parts = [
+        f'<g class="icon" transform="translate({ICON_X} {ICON_Y:.2f}) '
+        f'scale({scale:.6f})">{ICONS[key]}</g>',
+        f'<text class="head" x="{TEXT_X}" y="{HEAD_BASE}">'
+        f'<tspan class="strong">{spec["label"]}</tspan>&#160;{spec["head"]}</text>',
+    ]
 
     card_top = HEAD_H
     y = card_top + PAD + 12
@@ -170,12 +202,17 @@ def render(key, spec, start, end, path):
     parts.append(f'<text class="note" x="{lx + sw + 3}" y="{foot}">{high}</text>')
 
     card_bottom = foot + PAD
-    parts.insert(1, f'<rect class="card" x="0.5" y="{card_top + 0.5}" '
+    parts.insert(2, f'<rect class="card" x="0.5" y="{card_top + 0.5}" '
                     f'width="{W - 1}" height="{card_bottom - card_top}" rx="6"/>')
     height = card_bottom + 2
 
     style = (f"text {{ font-family: {FONT}; }}\n"
-             ".head { font-size: 16px; fill: #1f2328; }\n"
+             f".head {{ font-size: {HEAD_SIZE}px; fill: #1f2328; }}\n"
+             ".strong { font-weight: 600; }\n"
+             # The icons ship with fill="currentColor". A presentation attribute
+             # cannot be overridden by inheriting fill, but setting colour here
+             # resolves it, and leaves the vendor markup untouched.
+             ".icon { color: #1f2328; }\n"
              ".axis { font-size: 12px; fill: #1f2328; }\n"
              ".note { font-size: 12px; fill: #59636e; }\n"
              ".end { text-anchor: end; }\n"
@@ -185,11 +222,12 @@ def render(key, spec, start, end, path):
         style += ".%s%d { fill: %s; fill-opacity: %.2f; }\n" % (ns, i, colour, alpha[i])
     style += ("@media (prefers-color-scheme: dark) {\n"
               "  .head, .axis { fill: #f0f6fc; }\n"
+              "  .icon { color: #f0f6fc; }\n"
               "  .note { fill: #9198a1; }\n"
               "  .card { stroke: #3d444d; }\n"
               "}\n")
 
-    label = f'{spec["title"]} in London. {spec["head"]}. {spec["note"]}.'
+    label = f'{spec["label"]} {spec["head"]}. {spec["note"]}.'
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {height}" '
            f'width="{W}" height="{height}" role="img" aria-label="{label}">\n'
            f'<title>{spec["title"]} in London</title>\n<style>{style}</style>\n'
@@ -241,19 +279,22 @@ def main():
 
     specs = {
         "temperature": dict(
-            title="Temperature", series=temp_anom, cuts=[-2.5, -1, 1, 3],
+            title="Temperature", label="London Temp.",
+            series=temp_anom, cuts=[-2.5, -1, 1, 3],
             ends=("Cooler", "Warmer"), hues=[TEAL, TEAL, NEUTRAL, CORAL, CORAL],
             head=f"{abs(t_mean):.1f}°C {'above' if t_mean >= 0 else 'below'} "
                  "average in the last year",
             note=f"Daily maximum against the {tb} normal"),
         "rainfall": dict(
-            title="Rainfall", series=rain_ratio, cuts=[0.5, 0.8, 1.25, 2.0],
+            title="Rainfall", label="London Rainfall.",
+            series=rain_ratio, cuts=[0.5, 0.8, 1.25, 2.0],
             ends=("Drier", "Wetter"), hues=[GREY, GREY, NEUTRAL, TEAL, TEAL],
             head=f"{abs(r_mean - 1) * 100:.0f}% {'more' if r_mean >= 1 else 'less'} "
                  "rain than average in the last year",
             note=f"30-day totals against the {tb} normal"),
         "particulates": dict(
-            title="Fine particulates", series=pm_anom, cuts=[-6, -4, -2, 0],
+            title="Fine particulates", label="London Air Quality.",
+            series=pm_anom, cuts=[-6, -4, -2, 0],
             ends=("Cleaner", "Dirtier"), hues=[GREEN, GREEN, NEUTRAL, GREY, GREY],
             head=f"{abs(p_mean):.1f} µg/m³ {'cleaner' if p_mean < 0 else 'dirtier'} "
                  "than average in the last year",

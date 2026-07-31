@@ -43,4 +43,5 @@ Thursday 30 July 2026: 27.7°C, 3.3mm of rain, PM2.5 at 5 µg/m³.
 
 Rebuilt daily from [Open-Meteo](https://open-meteo.com/), using ERA5 and CAMS
 reanalysis. Generated using Copernicus Climate Change Service information.
+Icons from [Unicons](https://github.com/Iconscout/unicons) by Iconscout.
 Method and code in [`tools/build_plates.py`](tools/build_plates.py).

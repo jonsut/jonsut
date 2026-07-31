@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 212" width="900" height="212" role="img" aria-label="Rainfall in London. 10% more rain than average in the last year. 30-day totals against the 1991-2020 normal.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 212" width="900" height="212" role="img" aria-label="London Rainfall. 10% more rain than average in the last year. 30-day totals against the 1991-2020 normal.">
 <title>Rainfall in London</title>
 <style>text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
 .head { font-size: 16px; fill: #1f2328; }
+.strong { font-weight: 600; }
+.icon { color: #1f2328; }
 .axis { font-size: 12px; fill: #1f2328; }
 .note { font-size: 12px; fill: #59636e; }
 .end { text-anchor: end; }
@@ -14,11 +16,13 @@
 .r4 { fill: #3f8b92; fill-opacity: 0.75; }
 @media (prefers-color-scheme: dark) {
   .head, .axis { fill: #f0f6fc; }
+  .icon { color: #f0f6fc; }
   .note { fill: #9198a1; }
   .card { stroke: #3d444d; }
 }
 </style>
-<text class="head" x="0" y="22">10% more rain than average in the last year</text>
+<g class="icon" transform="translate(0 6.74) scale(0.791667)"><!-- Icon from Unicons by Iconscout - https://github.com/Iconscout/unicons/blob/master/LICENSE --><path fill="currentColor" d="M8.5 19a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1m0-5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1M21 7h-.8a4.3 4.3 0 0 0-.52-1.27l.56-.56a1 1 0 0 0-1.41-1.41l-.56.56A4.3 4.3 0 0 0 17 3.8V3a1 1 0 0 0-2 0v.8a4.1 4.1 0 0 0-1.26.52l-.57-.56a1 1 0 0 0-1.41 1.41l.56.57c-.09.15-.16.32-.24.48A6 6 0 0 0 10.5 6a6 6 0 0 0-5.94 5.13a3.5 3.5 0 0 0-.46 6.58a1.1 1.1 0 0 0 .4.08a1 1 0 0 0 .4-1.92A1.48 1.48 0 0 1 4 14.5A1.5 1.5 0 0 1 5.5 13a1 1 0 0 0 1-1a4 4 0 0 1 7.78-1.29a1 1 0 0 0 .78.67a2.32 2.32 0 0 1 .94 4.23a1 1 0 0 0 1.1 1.68a4.34 4.34 0 0 0 1.9-3.62a4.2 4.2 0 0 0-.3-1.55l.13.12a1 1 0 0 0 .7.29a1 1 0 0 0 .71-.29a1 1 0 0 0 0-1.41l-.56-.56A4.3 4.3 0 0 0 20.2 9h.8a1 1 0 0 0 0-2m-3.34 2.65a2.1 2.1 0 0 1-.6.42A4.2 4.2 0 0 0 16 9.54a6.1 6.1 0 0 0-2.09-2.49a2.4 2.4 0 0 1 .46-.7a2.43 2.43 0 0 1 3.3 0a2.37 2.37 0 0 1 0 3.3ZM12.5 18a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1m0-5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1"/></g>
+<text class="head" x="27" y="22"><tspan class="strong">London Rainfall.</tspan>&#160;10% more rain than average in the last year</text>
 <rect class="card" x="0.5" y="34.5" width="899" height="176" rx="6"/>
 <text class="axis" x="54" y="62">Aug</text>
 <text class="axis" x="129" y="62">Sep</text>
