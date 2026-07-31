@@ -75,22 +75,39 @@ def collect():
 def main():
     prompts, sessions, file_count = collect()
     os.makedirs(DATA, exist_ok=True)
+    out = os.path.join(DATA, "agent-days.json")
+
+    # Accumulate rather than overwrite. Claude Code's cleanupPeriodDays defaults to
+    # 30, so it deletes session files older than a month at startup: the transcripts
+    # are a rolling window, not an archive. Snapshotting them would mean the graph
+    # could never show more than the last thirty days, however long it ran. Merging
+    # means a day survives here once seen, so history accumulates from now on.
+    existing = {}
+    if os.path.exists(out):
+        existing = json.load(open(out)).get("days", {})
+
+    merged = dict(existing)
+    for day in prompts:
+        found = {"prompts": prompts[day], "sessions": len(sessions[day])}
+        was = merged.get(day)
+        # Take the higher of the two: a day still in progress grows as it goes, and a
+        # partially pruned day must never overwrite a complete earlier reading.
+        if was is None or found["prompts"] >= was["prompts"]:
+            merged[day] = found
+
     payload = {
         "note": "Daily Claude Code activity. Counts only: no projects, paths or content.",
         "timezone": "Europe/London",
-        "days": {
-            day: {"prompts": prompts[day], "sessions": len(sessions[day])}
-            for day in sorted(prompts)
-        },
+        "days": {day: merged[day] for day in sorted(merged)},
     }
-    out = os.path.join(DATA, "agent-days.json")
     json.dump(payload, open(out, "w"), indent=1)
 
     days = payload["days"]
+    added = len(merged) - len(existing)
     total = sum(v["prompts"] for v in days.values())
     busiest = max(days.items(), key=lambda kv: kv[1]["prompts"])
-    print(f"scanned {file_count} session files")
-    print(f"{len(days)} active days, {days and min(days)} to {days and max(days)}")
+    print(f"scanned {file_count} session files, {len(prompts)} days visible on disk")
+    print(f"archive now {len(days)} days ({added} new), {min(days)} to {max(days)}")
     print(f"{total} prompts, {sum(v['sessions'] for v in days.values())} sessions")
     print(f"busiest day: {busiest[0]} with {busiest[1]['prompts']} prompts")
     print(f"wrote {out} ({os.path.getsize(out) / 1024:.0f}KB)")
