@@ -1,10 +1,19 @@
-# Header panel
+# Typeset panels
 
-`header.svg` is generated, not hand-drawn. Regenerate it with:
+`header.svg` and `section-actions.svg` are generated, not hand-drawn. Both come
+out of one run:
 
-    python3 -m venv venv
-    ./venv/bin/pip install uharfbuzz fonttools
-    ./venv/bin/python tools/build_panel.py
+    python3 -m venv preview/.venv
+    ./preview/.venv/bin/pip install uharfbuzz fonttools
+    ./preview/.venv/bin/python tools/build_panel.py
+
+`preview/` is gitignored, so the venv lives beside the other scratch artefacts
+rather than in the repo root. Building needs PP Neue Montreal installed locally,
+which is why this is a manual step and not part of the daily Action.
+
+To check both themes, `preview/section_preview.py` writes flattened light and
+dark copies. Headless Chrome reports `prefers-color-scheme: dark`, so a naive
+screenshot only ever shows one branch of the media query.
 
 ## Why it is built this way
 
@@ -27,6 +36,12 @@ The mark uses fixed colours rather than `currentColor`, because CSS custom
 properties and `currentColor` do not cross the `img` document boundary. The
 source of truth for the identity assets is `site/public/identity/` in the
 website repo.
+
+`assets/github-actions.svg` is GitHub's Actions logo, used here to refer to the
+product it names. The build strips its two brand blues and refills the paths in
+the panel's ink colour so it reads as a glyph beside the type. GitHub's brand
+guidelines ask that their logos not be recoloured; if that matters, the Octicons
+`workflow` icon is MIT-licensed and already monochrome.
 
 ## Accessibility
 

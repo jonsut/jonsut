@@ -1,4 +1,7 @@
-"""Generate the profile header panel as a self-contained SVG.
+"""Generate the profile's typeset panels as self-contained SVGs.
+
+Two outputs: header.svg, the masthead at the top of the README, and
+section-actions.svg, the headline for the graphs project below it.
 
 Text is shaped with HarfBuzz and emitted as outlines, because fonts are never
 loaded when an SVG renders inside an <img> tag, which is how GitHub embeds it.
@@ -22,6 +25,7 @@ IDENTITY = os.environ.get(
     "JONMARK_SVG",
     os.path.expanduser("~/IdeaProjects/jonsut/site/public/identity/jon-avatar.svg"),
 )
+ACTIONS_MARK = os.path.join(HERE, "..", "assets", "github-actions.svg")
 DISPLAY_SEMIBOLD = f"{FONTS}/PPNeueMontreal-Semibold.otf"
 DISPLAY_REGULAR = f"{FONTS}/PPNeueMontreal-Regular.otf"
 TEXT_BOOK = f"{FONTS}/PPNeueMontrealText-Book.otf"
@@ -69,7 +73,11 @@ class Shaper:
         return group, pen_x * scale
 
 
-# ---------------------------------------------------------------- composition
+# ------------------------------------------------------------------ the header
+
+# GitHub's own foreground colour in light mode. Borrowed so the type sits in the
+# page rather than on it, and so the two panels agree with each other.
+INK, INK_DARK = "#25292e", "#e8e8ea"
 
 W, H = 900, 176
 MARK_SIZE = 68
@@ -115,12 +123,12 @@ mark = (
 svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Jon Sutton, software engineer with roots in research, design and creative technology">
 <title>Jon Sutton</title>
 <style>
-.ink {{ fill: #111111; }}
+.ink {{ fill: {INK}; }}
 .muted {{ fill: #63656f; }}
 .label {{ fill: #55575f; }}
 .rule {{ stroke: #b5b5b5; }}
 @media (prefers-color-scheme: dark) {{
-  .ink {{ fill: #e8e8ea; }}
+  .ink {{ fill: {INK_DARK}; }}
   .muted {{ fill: #9ea0a9; }}
   .label {{ fill: #8b8d96; }}
   .rule {{ stroke: #33383f; }}
@@ -138,3 +146,56 @@ out = os.path.join(ROOT, "header.svg")
 with open(out, "w") as fh:
     fh.write(svg)
 print(f"wrote {out} ({len(svg)} bytes), label run width {label_w:.1f}px")
+
+
+# ------------------------------------------------------- the section headline
+
+HEADLINE = "Data + Actions + SVG"
+SIZE, BASELINE = 38, 44
+MARK_H, MARK_GAP = 48, 20
+CAP = 0.715  # PP Neue Montreal cap height, from the font's OS/2 table
+
+# Centre the logo on the cap band rather than the em box or the viewBox, because
+# the headline has no descenders and its optical mass is entirely between the
+# baseline and the cap line. Sized a little taller than the caps so its thin
+# strokes hold their own against semibold type.
+cap_mid = BASELINE - CAP * SIZE / 2
+mark_top = cap_mid - MARK_H / 2
+SECTION_H = round(mark_top + MARK_H + 6)
+
+# Same viewBox width as the header and the plates, so everything below it scales
+# in lockstep as the reader narrows their window.
+headline_run, headline_w = Shaper(DISPLAY_SEMIBOLD).run(
+    HEADLINE, SIZE, MARK_H + MARK_GAP, BASELINE, cls="ink"
+)
+
+# The Actions logo, flattened to one colour. Its two paths are drawn in GitHub's
+# blues; taken apart and re-filled they read as a mono glyph beside the type.
+with open(ACTIONS_MARK) as fh:
+    actions = fh.read()
+marks = [chunk.split('"')[0] for chunk in actions.split(' d="')[1:]]
+mark_scale = MARK_H / 128
+logo = (
+    f'<g class="ink" transform="translate(0 {mark_top:.2f}) scale({mark_scale:.6f})">'
+    + "".join(f'<path d="{d}"/>' for d in marks)
+    + "</g>"
+)
+
+section = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {SECTION_H}" width="{W}" height="{SECTION_H}" role="img" aria-label="{HEADLINE}">
+<title>{HEADLINE}</title>
+<style>
+.ink {{ fill: {INK}; }}
+@media (prefers-color-scheme: dark) {{
+  .ink {{ fill: {INK_DARK}; }}
+}}
+</style>
+{logo}
+{headline_run}
+</svg>
+"""
+
+out = os.path.join(ROOT, "section-actions.svg")
+with open(out, "w") as fh:
+    fh.write(section)
+print(f"wrote {out} ({len(section)} bytes), {len(marks)} mark paths, "
+      f"headline width {headline_w:.1f}px")

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 176" width="900" height="176" role="img" aria-label="Jon Sutton, software engineer with roots in research, design and creative technology">
 <title>Jon Sutton</title>
 <style>
-.ink { fill: #111111; }
+.ink { fill: #25292e; }
 .muted { fill: #63656f; }
 .label { fill: #55575f; }
 .rule { stroke: #b5b5b5; }

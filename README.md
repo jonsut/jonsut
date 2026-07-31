@@ -15,6 +15,8 @@ More at [jonsut.co.uk](https://jonsut.co.uk) · [LinkedIn](https://www.linkedin.
 
 <br><br><br>
 
+<img src="section-actions.svg" alt="Data + Actions + SVG" width="900">
+
 ## Contribution graphs for things that aren't contributions
 
 GitHub's contribution graph is a decent piece of information design doing exactly one
