@@ -37,6 +37,22 @@ properties and `currentColor` do not cross the `img` document boundary. The
 source of truth for the identity assets is `site/public/identity/` in the
 website repo.
 
+## Plates
+
+`build_plates.py` renders the London plates and owns the shared drawing code:
+the grid, the bands, the legend and the headline icons. `build_football.py`
+imports it and supplies its own series. Both are standard library only, so the
+daily Action installs nothing and there is no dependency to rot.
+
+`build_football.py` loads two seasons rather than one, because a rolling 365-day
+window straddles the summer. That also stops the plates emptying when openfootball
+is slow to publish, which it is: the 2025-26 Premier League file was updated 22
+times all season and once went 97 days without a change. Treat these as a season
+in review, not a live scoreboard. A missing season directory returns 404 and is
+handled as an ordinary state.
+
+## Third-party artwork
+
 `assets/github-actions.svg` is GitHub's Actions logo, used here to refer to the
 product it names. The build strips its two brand blues and refills the paths in
 the panel's ink colour so it reads as a glyph beside the type. GitHub's brand

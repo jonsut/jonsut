@@ -1,4 +1,4 @@
-name: Daily London plates
+name: Daily plates
 
 on:
   schedule:
@@ -25,20 +25,26 @@ jobs:
 
       # No dependencies to install: the generator is standard library only, so there
       # is nothing to pin and nothing to rot.
-      - name: Render plates
+      - name: Render London plates
         run: python3 tools/build_plates.py
+
+      # Separate step so a football source outage cannot take the weather plates
+      # with it. openfootball publishes in bursts and a season directory can be
+      # missing for weeks, which the build treats as an ordinary state.
+      - name: Render Arsenal plates
+        run: python3 tools/build_football.py
 
       - name: Commit if anything changed
         run: |
           # A committer that is not a GitHub account keeps this out of the repo's
           # Contributors panel and off anyone's contribution graph, so a year of
           # automated commits does not read as human activity.
-          git config user.name "london-plates"
+          git config user.name "daily-plates"
           git config user.email "actions@users.noreply.github.com"
           git add -A
           if git diff --staged --quiet; then
             echo "No change today."
           else
-            git commit -m "Update London plates"
+            git commit -m "Update daily plates"
             git push
           fi

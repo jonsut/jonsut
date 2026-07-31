@@ -45,3 +45,30 @@ Rebuilt daily from [Open-Meteo](https://open-meteo.com/), using ERA5 and CAMS
 reanalysis. Generated using Copernicus Climate Change Service information.
 Icons from [Unicons](https://github.com/Iconscout/unicons) by Iconscout.
 Method and code in [`tools/build_plates.py`](tools/build_plates.py).
+
+<br><br><br>
+
+### Football
+
+The other national obsession. Arsenal across the last 365 days, in the league and
+in Europe: every match played, where they sat in the table, and how they were
+going at the time. The bands are not an even slice of the number, because a league
+position is not a quantity. It is a set of thresholds that mean different things
+to a supporter, so the steps are the ones that have names: the trophy, the title,
+the runner-up, Europe, mid-table, the bottom half.
+
+<img src="arsenal-results.svg" alt="Arsenal's results over the last 365 days, shown as a calendar heatmap of wins, draws and losses in the Premier League and Champions League" width="900">
+
+<img src="arsenal-position.svg" alt="Arsenal's Premier League position over the last 365 days, shown as a calendar heatmap banded by champions, first, second, top six, mid-table and bottom half" width="900">
+
+<img src="arsenal-form.svg" alt="Arsenal's rolling form over the last 365 days, shown as a calendar heatmap of points won in the previous five matches" width="900">
+
+A season in review rather than a live feed, unlike the plates above. The source is
+volunteer-maintained and publishes in bursts: across 2025-26 the Premier League
+file was updated 22 times, and once went 97 days without a change. The job runs
+every morning regardless, so the plates follow the data as it lands.
+
+Match data from [openfootball](https://github.com/openfootball/football.json),
+released into the public domain under CC0. The FA Cup and the League Cup are not
+published there in any format, so this is the league and Europe only.
+Method and code in [`tools/build_football.py`](tools/build_football.py).
