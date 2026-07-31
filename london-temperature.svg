@@ -405,11 +405,11 @@
 <rect class="t4" x="834" y="102" width="12" height="12" rx="2"/>
 <rect class="t4" x="834" y="117" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Daily maximum against the 1991-2020 normal</text>
-<text class="note end" x="749" y="194">Cooler</text>
-<rect class="t0" x="755" y="184" width="12" height="12" rx="2"/>
-<rect class="t1" x="770" y="184" width="12" height="12" rx="2"/>
-<rect class="t2" x="785" y="184" width="12" height="12" rx="2"/>
-<rect class="t3" x="800" y="184" width="12" height="12" rx="2"/>
-<rect class="t4" x="815" y="184" width="12" height="12" rx="2"/>
-<text class="note" x="833" y="194">Warmer</text>
+<text class="note end" x="760.4" y="194">Cooler</text>
+<rect class="t0" x="766.4" y="184" width="12" height="12" rx="2"/>
+<rect class="t1" x="781.4" y="184" width="12" height="12" rx="2"/>
+<rect class="t2" x="796.4" y="184" width="12" height="12" rx="2"/>
+<rect class="t3" x="811.4" y="184" width="12" height="12" rx="2"/>
+<rect class="t4" x="826.4" y="184" width="12" height="12" rx="2"/>
+<text class="note" x="844.4" y="194">Warmer</text>
 </svg>

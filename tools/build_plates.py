@@ -194,12 +194,14 @@ def render(key, spec, start, end, path):
     parts.append(f'<text class="note" x="{GRID_X}" y="{foot}">{spec["note"]}</text>')
     low, high = spec["ends"]
     sw = len(hues) * (CELL + 3)
-    lx = W - PAD - 8 - sw - 46
-    parts.append(f'<text class="note end" x="{lx - 6}" y="{foot}">{low}</text>')
+    # Reserve room for the right-hand label from its own length rather than a fixed
+    # allowance, so a longer word than "Warmer" cannot run off the edge of the card.
+    lx = W - PAD - sw - (len(high) * 6.6 + 3)
+    parts.append(f'<text class="note end" x="{lx - 6:.1f}" y="{foot}">{low}</text>')
     for i in range(len(hues)):
-        parts.append(f'<rect class="{ns}{i}" x="{lx + i * (CELL + 3)}" '
+        parts.append(f'<rect class="{ns}{i}" x="{lx + i * (CELL + 3):.1f}" '
                      f'y="{foot - CELL + 2}" width="{CELL}" height="{CELL}" rx="{RADIUS}"/>')
-    parts.append(f'<text class="note" x="{lx + sw + 3}" y="{foot}">{high}</text>')
+    parts.append(f'<text class="note" x="{lx + sw + 3:.1f}" y="{foot}">{high}</text>')
 
     card_bottom = foot + PAD
     parts.insert(2, f'<rect class="card" x="0.5" y="{card_top + 0.5}" '
