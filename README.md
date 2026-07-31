@@ -25,13 +25,12 @@ live data with them.
 
 ### London environment
 
-The British talk about the weather constantly, and in fairness it has been unusually
-worth talking about. Colour here shows how far each day sat from its long-term normal
-rather than its absolute value, so a mild January reads as warm and a cool August
-reads as cold.
+We Brits are obsessed with the weather, so here is that obsession given a contribution
+graph. Colour shows how far each day sat from its long-term normal rather than its
+absolute value, so a mild January reads as warm and a cool August reads as cold.
 
 <!-- TODAY:START -->
-Yesterday in London: 27.7°C, 3.3mm of rain, PM2.5 at 5 µg/m³.
+Thursday 30 July 2026: 27.7°C, 3.3mm of rain, PM2.5 at 5 µg/m³.
 <!-- TODAY:END -->
 
 <img src="london-temperature.svg" alt="Daily maximum temperature in London for the last 365 days, shown as a calendar heatmap of departures from the 1991-2020 normal" width="900">

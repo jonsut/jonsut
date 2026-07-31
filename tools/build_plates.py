@@ -132,6 +132,8 @@ def month_ticks(start, end):
 
 def render(key, spec, start, end, path):
     ns, hues, cuts = key[0], spec["hues"], spec["cuts"]
+    # Diverging plates share ALPHA; a sequential one supplies its own.
+    alpha = spec.get("alpha", ALPHA)
     first_monday = start - timedelta(days=start.weekday())
     parts = [f'<text class="head" x="0" y="{HEAD_H - 12}">{spec["head"]}</text>']
 
@@ -180,7 +182,7 @@ def render(key, spec, start, end, path):
              ".card { fill: none; stroke: #d1d9e0; stroke-width: 1; }\n"
              ".%s-void { fill: %s; fill-opacity: 0.10; }\n" % (ns, NEUTRAL))
     for i, colour in enumerate(hues):
-        style += ".%s%d { fill: %s; fill-opacity: %.2f; }\n" % (ns, i, colour, ALPHA[i])
+        style += ".%s%d { fill: %s; fill-opacity: %.2f; }\n" % (ns, i, colour, alpha[i])
     style += ("@media (prefers-color-scheme: dark) {\n"
               "  .head, .axis { fill: #f0f6fc; }\n"
               "  .note { fill: #9198a1; }\n"
@@ -263,7 +265,10 @@ def main():
         h = render(key, spec, start, end, path)
         print(f"london-{key}.svg  {W}x{h}  {len(spec['series'])} days  |  {spec['head']}")
 
-    line = (f"Yesterday in London: {temp[end]:.1f}°C, {rain[end]:.1f}mm of rain, "
+    # Dated rather than "yesterday": the README is read long after it is written, and
+    # a relative date makes a stale line indistinguishable from a fresh one.
+    stamp = f"{end:%A} {end.day} {end:%B} {end.year}"
+    line = (f"{stamp}: {temp[end]:.1f}°C, {rain[end]:.1f}mm of rain, "
             f"PM2.5 at {pm[end]:.0f} µg/m³.")
     update_readme(line)
     print(line)
