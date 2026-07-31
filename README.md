@@ -12,3 +12,19 @@ Recent work:
 Currently exploring practical AI evaluation, agent workflows, and expressive interfaces that remain reliable in production.
 
 More at [jonsut.co.uk](https://jonsut.co.uk) · [LinkedIn](https://www.linkedin.com/in/jon-sutton-b11251147)
+
+## London, last 365 days
+
+<!-- TODAY:START -->
+Yesterday in London: 27.7°C, 3.3mm of rain, PM2.5 at 5 µg/m³.
+<!-- TODAY:END -->
+
+<img src="london-temperature.svg" alt="Daily maximum temperature in London for the last 365 days, shown as a calendar heatmap of departures from the 1991-2020 normal" width="900">
+
+<img src="london-rainfall.svg" alt="Rainfall in London for the last 365 days, shown as a calendar heatmap of 30-day totals against the 1991-2020 normal" width="900">
+
+<img src="london-particulates.svg" alt="PM2.5 fine particulates in London for the last 365 days, shown as a calendar heatmap of departures from the 2015-2025 normal" width="900">
+
+Rebuilt daily from [Open-Meteo](https://open-meteo.com/), using ERA5 and CAMS
+reanalysis. Generated using Copernicus Climate Change Service information.
+Method and code in [`tools/build_plates.py`](tools/build_plates.py).
