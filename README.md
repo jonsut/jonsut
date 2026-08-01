@@ -32,7 +32,7 @@ graph. Colour shows how far each day sat from its long-term normal rather than i
 absolute value, so a mild January reads as warm and a cool August reads as cold.
 
 <!-- TODAY:START -->
-Thursday 30 July 2026: 27.7°C, 3.3mm of rain, PM2.5 at 5 µg/m³.
+Friday 31 July 2026: 25.2°C, 0.6mm of rain, PM2.5 at 4 µg/m³.
 <!-- TODAY:END -->
 
 <img src="london-temperature.svg" alt="Daily maximum temperature in London for the last 365 days, shown as a calendar heatmap of departures from the 1991-2020 normal" width="900">

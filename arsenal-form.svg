@@ -24,7 +24,6 @@
 <g class="icon" transform="translate(0 6.74) scale(0.791667)"><!-- Icon from Unicons by Iconscout - https://github.com/Iconscout/unicons/blob/master/LICENSE --><path fill="currentColor" d="M7 16a1.5 1.5 0 0 0 1.5-1.5a1 1 0 0 0 0-.15l2.79-2.79h.46l1.61 1.61v.08a1.5 1.5 0 1 0 3 0v-.08L20 9.5A1.5 1.5 0 1 0 18.5 8a1 1 0 0 0 0 .15l-3.61 3.61h-.16L13 10a1.49 1.49 0 0 0-3 0l-3 3a1.5 1.5 0 0 0 0 3m13.5 4h-17V3a1 1 0 0 0-2 0v18a1 1 0 0 0 1 1h18a1 1 0 0 0 0-2"/></g>
 <text class="head" x="27" y="22"><tspan class="strong">Arsenal Form.</tspan>&#160;Best run 15 points from five, worst 5, across 53 matches</text>
 <rect class="card" x="0.5" y="34.5" width="899" height="176" rx="6"/>
-<text class="axis" x="54" y="62">Aug</text>
 <text class="axis" x="129" y="62">Sep</text>
 <text class="axis" x="189" y="62">Oct</text>
 <text class="axis" x="249" y="62">Nov</text>
@@ -39,7 +38,6 @@
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="f-void" x="54" y="117" width="12" height="12" rx="2"/>
 <rect class="f-void" x="54" y="132" width="12" height="12" rx="2"/>
 <rect class="f-void" x="54" y="147" width="12" height="12" rx="2"/>
 <rect class="f-void" x="54" y="162" width="12" height="12" rx="2"/>
@@ -404,6 +402,7 @@
 <rect class="f-void" x="834" y="87" width="12" height="12" rx="2"/>
 <rect class="f-void" x="834" y="102" width="12" height="12" rx="2"/>
 <rect class="f-void" x="834" y="117" width="12" height="12" rx="2"/>
+<rect class="f-void" x="834" y="132" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Points won in the previous five matches, out of a possible 15. Three for a win, one for a draw</text>
 <text class="note end" x="753.8" y="194">Poor</text>
 <rect class="f0" x="759.8" y="184" width="12" height="12" rx="2"/>
