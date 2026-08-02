@@ -35,10 +35,10 @@
 <text class="axis" x="639" y="62">May</text>
 <text class="axis" x="714" y="62">Jun</text>
 <text class="axis" x="774" y="62">Jul</text>
+<text class="axis" x="834" y="62">Aug</text>
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="f-void" x="54" y="132" width="12" height="12" rx="2"/>
 <rect class="f-void" x="54" y="147" width="12" height="12" rx="2"/>
 <rect class="f-void" x="54" y="162" width="12" height="12" rx="2"/>
 <rect class="f-void" x="69" y="72" width="12" height="12" rx="2"/>
@@ -54,36 +54,36 @@
 <rect class="f-void" x="84" y="117" width="12" height="12" rx="2"/>
 <rect class="f-void" x="84" y="132" width="12" height="12" rx="2"/>
 <rect class="f-void" x="84" y="147" width="12" height="12" rx="2"/>
-<rect class="f2" x="84" y="162" width="12" height="12" rx="2"/>
-<rect class="f2" x="99" y="72" width="12" height="12" rx="2"/>
-<rect class="f2" x="99" y="87" width="12" height="12" rx="2"/>
-<rect class="f2" x="99" y="102" width="12" height="12" rx="2"/>
-<rect class="f2" x="99" y="117" width="12" height="12" rx="2"/>
-<rect class="f2" x="99" y="132" width="12" height="12" rx="2"/>
-<rect class="f3" x="99" y="147" width="12" height="12" rx="2"/>
-<rect class="f3" x="99" y="162" width="12" height="12" rx="2"/>
-<rect class="f3" x="114" y="72" width="12" height="12" rx="2"/>
-<rect class="f3" x="114" y="87" width="12" height="12" rx="2"/>
-<rect class="f3" x="114" y="102" width="12" height="12" rx="2"/>
-<rect class="f3" x="114" y="117" width="12" height="12" rx="2"/>
-<rect class="f3" x="114" y="132" width="12" height="12" rx="2"/>
-<rect class="f3" x="114" y="147" width="12" height="12" rx="2"/>
-<rect class="f3" x="114" y="162" width="12" height="12" rx="2"/>
-<rect class="f3" x="129" y="72" width="12" height="12" rx="2"/>
-<rect class="f3" x="129" y="87" width="12" height="12" rx="2"/>
-<rect class="f3" x="129" y="102" width="12" height="12" rx="2"/>
-<rect class="f3" x="129" y="117" width="12" height="12" rx="2"/>
-<rect class="f3" x="129" y="132" width="12" height="12" rx="2"/>
-<rect class="f3" x="129" y="147" width="12" height="12" rx="2"/>
-<rect class="f3" x="129" y="162" width="12" height="12" rx="2"/>
-<rect class="f3" x="144" y="72" width="12" height="12" rx="2"/>
-<rect class="f3" x="144" y="87" width="12" height="12" rx="2"/>
-<rect class="f3" x="144" y="102" width="12" height="12" rx="2"/>
-<rect class="f3" x="144" y="117" width="12" height="12" rx="2"/>
-<rect class="f3" x="144" y="132" width="12" height="12" rx="2"/>
-<rect class="f3" x="144" y="147" width="12" height="12" rx="2"/>
-<rect class="f3" x="144" y="162" width="12" height="12" rx="2"/>
-<rect class="f3" x="159" y="72" width="12" height="12" rx="2"/>
+<rect class="f-void" x="84" y="162" width="12" height="12" rx="2"/>
+<rect class="f-void" x="99" y="72" width="12" height="12" rx="2"/>
+<rect class="f-void" x="99" y="87" width="12" height="12" rx="2"/>
+<rect class="f-void" x="99" y="102" width="12" height="12" rx="2"/>
+<rect class="f-void" x="99" y="117" width="12" height="12" rx="2"/>
+<rect class="f-void" x="99" y="132" width="12" height="12" rx="2"/>
+<rect class="f-void" x="99" y="147" width="12" height="12" rx="2"/>
+<rect class="f-void" x="99" y="162" width="12" height="12" rx="2"/>
+<rect class="f-void" x="114" y="72" width="12" height="12" rx="2"/>
+<rect class="f-void" x="114" y="87" width="12" height="12" rx="2"/>
+<rect class="f-void" x="114" y="102" width="12" height="12" rx="2"/>
+<rect class="f-void" x="114" y="117" width="12" height="12" rx="2"/>
+<rect class="f-void" x="114" y="132" width="12" height="12" rx="2"/>
+<rect class="f-void" x="114" y="147" width="12" height="12" rx="2"/>
+<rect class="f-void" x="114" y="162" width="12" height="12" rx="2"/>
+<rect class="f-void" x="129" y="72" width="12" height="12" rx="2"/>
+<rect class="f-void" x="129" y="87" width="12" height="12" rx="2"/>
+<rect class="f-void" x="129" y="102" width="12" height="12" rx="2"/>
+<rect class="f-void" x="129" y="117" width="12" height="12" rx="2"/>
+<rect class="f-void" x="129" y="132" width="12" height="12" rx="2"/>
+<rect class="f-void" x="129" y="147" width="12" height="12" rx="2"/>
+<rect class="f-void" x="129" y="162" width="12" height="12" rx="2"/>
+<rect class="f-void" x="144" y="72" width="12" height="12" rx="2"/>
+<rect class="f-void" x="144" y="87" width="12" height="12" rx="2"/>
+<rect class="f-void" x="144" y="102" width="12" height="12" rx="2"/>
+<rect class="f-void" x="144" y="117" width="12" height="12" rx="2"/>
+<rect class="f-void" x="144" y="132" width="12" height="12" rx="2"/>
+<rect class="f-void" x="144" y="147" width="12" height="12" rx="2"/>
+<rect class="f-void" x="144" y="162" width="12" height="12" rx="2"/>
+<rect class="f-void" x="159" y="72" width="12" height="12" rx="2"/>
 <rect class="f3" x="159" y="87" width="12" height="12" rx="2"/>
 <rect class="f3" x="159" y="102" width="12" height="12" rx="2"/>
 <rect class="f3" x="159" y="117" width="12" height="12" rx="2"/>
@@ -403,6 +403,7 @@
 <rect class="f-void" x="834" y="102" width="12" height="12" rx="2"/>
 <rect class="f-void" x="834" y="117" width="12" height="12" rx="2"/>
 <rect class="f-void" x="834" y="132" width="12" height="12" rx="2"/>
+<rect class="f-void" x="834" y="147" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Points won in the previous five matches, out of a possible 15. Three for a win, one for a draw</text>
 <text class="note end" x="753.8" y="194">Poor</text>
 <rect class="f0" x="759.8" y="184" width="12" height="12" rx="2"/>

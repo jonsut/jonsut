@@ -35,10 +35,10 @@
 <text class="axis" x="639" y="62">May</text>
 <text class="axis" x="714" y="62">Jun</text>
 <text class="axis" x="774" y="62">Jul</text>
+<text class="axis" x="834" y="62">Aug</text>
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="t0" x="54" y="132" width="12" height="12" rx="2"/>
 <rect class="t1" x="54" y="147" width="12" height="12" rx="2"/>
 <rect class="t2" x="54" y="162" width="12" height="12" rx="2"/>
 <rect class="t2" x="69" y="72" width="12" height="12" rx="2"/>
@@ -403,6 +403,7 @@
 <rect class="t4" x="834" y="102" width="12" height="12" rx="2"/>
 <rect class="t4" x="834" y="117" width="12" height="12" rx="2"/>
 <rect class="t3" x="834" y="132" width="12" height="12" rx="2"/>
+<rect class="t4" x="834" y="147" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Daily maximum against the 1991-2020 normal</text>
 <text class="note end" x="760.4" y="194">Cooler</text>
 <rect class="t0" x="766.4" y="184" width="12" height="12" rx="2"/>
