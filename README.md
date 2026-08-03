@@ -32,7 +32,7 @@ graph. Colour shows how far each day sat from its long-term normal rather than i
 absolute value, so a mild January reads as warm and a cool August reads as cold.
 
 <!-- TODAY:START -->
-Sunday 2 August 2026: 28.2°C, 0.0mm of rain, PM2.5 at 6 µg/m³.
+<img src="cover.svg" alt="Yesterday in London it was 28.2°C, which is 6.7 degrees above average. It was the warmest 2nd of August in 8 years." width="900">
 <!-- TODAY:END -->
 
 <img src="london-temperature.svg" alt="Daily maximum temperature in London for the last 365 days, shown as a calendar heatmap of departures from the 1991-2020 normal" width="900">

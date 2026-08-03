@@ -21,9 +21,16 @@ text needs a theme override.
 import json
 import os
 import statistics
+import subprocess
 import sys
+import time
+import urllib.error
 import urllib.request
 from datetime import date, timedelta
+
+import cover
+import dateline
+import news
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -37,9 +44,23 @@ ARCHIVE = "https://archive-api.open-meteo.com/v1/archive"
 AIR = "https://air-quality-api.open-meteo.com/v1/air-quality"
 
 
-def fetch(url):
-    with urllib.request.urlopen(url, timeout=180) as fh:
-        return json.load(fh)
+def fetch(url, retries=5):
+    """GET with backoff. Open-Meteo returns the occasional 502 and CI runners drop
+    connections; either one failing the whole job would leave the plates stale with
+    nothing to show for it."""
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(url, timeout=180) as fh:
+                return json.load(fh)
+        except (urllib.error.HTTPError, urllib.error.URLError,
+                TimeoutError, OSError) as err:
+            code = getattr(err, "code", None)
+            fatal = code is not None and code not in (429, 500, 502, 503, 504)
+            if fatal or attempt == retries - 1:
+                raise
+            wait = 10 * (attempt + 1)
+            print(f"  {code or type(err).__name__}, retrying in {wait}s")
+            time.sleep(wait)
 
 
 def doy(d):
@@ -193,6 +214,17 @@ def render(key, spec, start, end, path):
                      f'height="{CELL}" rx="{RADIUS}"/>')
         cursor += timedelta(days=1)
 
+    # Ring the newest cell. The grid is a year of near-identical squares and
+    # nothing in it says which one is today, so the eye has no reason to believe
+    # any of it moved since yesterday. One outline gives it somewhere to land.
+    # Off by default: on the football plates the newest day is usually not a match,
+    # so a ring would point at an empty square.
+    if spec.get("mark_newest") and spec["series"].get(end) is not None:
+        mx = GRID_X + ((end - first_monday).days // 7) * STEP
+        my = y + end.weekday() * STEP
+        parts.append(f'<rect class="newest" x="{mx - 2}" y="{my - 2}" '
+                     f'width="{CELL + 4}" height="{CELL + 4}" rx="{RADIUS + 2}"/>')
+
     foot = y + 7 * STEP - GAP + 20
     parts.append(f'<text class="note" x="{GRID_X}" y="{foot}">{spec["note"]}</text>')
     low, high = spec["ends"]
@@ -222,6 +254,7 @@ def render(key, spec, start, end, path):
              ".note { font-size: 12px; fill: #59636e; }\n"
              ".end { text-anchor: end; }\n"
              ".card { fill: none; stroke: #d1d9e0; stroke-width: 1; }\n"
+             ".newest { fill: none; stroke: #1f2328; stroke-width: 1.5; }\n"
              ".%s-void { fill: %s; fill-opacity: 0.10; }\n" % (ns, NEUTRAL))
     for i, colour in enumerate(hues):
         style += ".%s%d { fill: %s; fill-opacity: %.2f; }\n" % (ns, i, colour, alpha[i])
@@ -230,6 +263,7 @@ def render(key, spec, start, end, path):
               "  .icon { color: #f0f6fc; }\n"
               "  .note { fill: #9198a1; }\n"
               "  .card { stroke: #3d444d; }\n"
+              "  .newest { stroke: #f0f6fc; }\n"
               "}\n")
 
     label = f'{spec["label"]} {spec["head"]}. {spec["note"]}.'
@@ -286,21 +320,21 @@ def main():
         "temperature": dict(
             title="Temperature", label="London Temp.",
             series=temp_anom, cuts=[-2.5, -1, 1, 3],
-            ends=("Cooler", "Warmer"), hues=[TEAL, TEAL, NEUTRAL, CORAL, CORAL],
+            mark_newest=True, ends=("Cooler", "Warmer"), hues=[TEAL, TEAL, NEUTRAL, CORAL, CORAL],
             head=f"{abs(t_mean):.1f}°C {'above' if t_mean >= 0 else 'below'} "
                  "average in the last year",
             note=f"Daily maximum against the {tb} normal"),
         "rainfall": dict(
             title="Rainfall", label="London Rainfall.",
             series=rain_ratio, cuts=[0.5, 0.8, 1.25, 2.0],
-            ends=("Drier", "Wetter"), hues=[GREY, GREY, NEUTRAL, TEAL, TEAL],
+            mark_newest=True, ends=("Drier", "Wetter"), hues=[GREY, GREY, NEUTRAL, TEAL, TEAL],
             head=f"{abs(r_mean - 1) * 100:.0f}% {'more' if r_mean >= 1 else 'less'} "
                  "rain than average in the last year",
             note=f"30-day totals against the {tb} normal"),
         "particulates": dict(
             title="Fine particulates", label="London Air Quality.",
             series=pm_anom, cuts=[-6, -4, -2, 0],
-            ends=("Cleaner", "Dirtier"), hues=[GREEN, GREEN, NEUTRAL, GREY, GREY],
+            mark_newest=True, ends=("Cleaner", "Dirtier"), hues=[GREEN, GREEN, NEUTRAL, GREY, GREY],
             head=f"{abs(p_mean):.1f} µg/m³ {'cleaner' if p_mean < 0 else 'dirtier'} "
                  "than average in the last year",
             note=f"PM2.5 daily mean against the {pb} normal"),
@@ -311,13 +345,40 @@ def main():
         h = render(key, spec, start, end, path)
         print(f"london-{key}.svg  {W}x{h}  {len(spec['series'])} days  |  {spec['head']}")
 
-    # Dated rather than "yesterday": the README is read long after it is written, and
-    # a relative date makes a stale line indistinguishable from a fresh one.
-    stamp = f"{end:%A} {end.day} {end:%B} {end.year}"
-    line = (f"{stamp}: {temp[end]:.1f}°C, {rain[end]:.1f}mm of rain, "
-            f"PM2.5 at {pm[end]:.0f} µg/m³.")
-    update_readme(line)
-    print(line)
+    # The 86-year record, extended by yesterday, then the cover drawn from it. The
+    # cover is the one thing on the page that announces the page was rebuilt, so it
+    # is built last: if anything above failed, there is nothing new to announce.
+    history = news.load()
+    moved = news.update(history)
+    json.dump(history, open(os.path.join(DATA, "london-daily.json"), "w"),
+              separators=(",", ":"))
+    edition = editions()
+    line = cover.render(history, end, edition, os.path.join(ROOT, "cover.svg"))
+    update_readme(f'<img src="cover.svg" alt="{line}" width="900">')
+    print(f"{line}  ({moved} readings updated)")
+
+    # The dateline, on the masthead's own rule, in the panel's own type. This is
+    # the only thing on the page a reader meets before deciding what it is.
+    stamp = f"{end:%A} {end.day} {end:%B} {end.year}".upper()
+    dateline.stamp(os.path.join(ROOT, "header.svg"),
+                   f"{stamp} · NO. {edition}", right=900, baseline=154)
+    print(f"dateline: {stamp} · NO. {edition}")
+
+
+def editions():
+    """How many times the plates have actually been published.
+
+    Counted from the commits rather than from a stored number, so it cannot drift
+    from the truth, and so a day the job ran but changed nothing does not claim an
+    edition that never existed. Needs the workflow to check out full history.
+    """
+    try:
+        out = subprocess.run(
+            ["git", "log", "--oneline", "--grep", "^Update .*plates$"],
+            cwd=ROOT, capture_output=True, text=True, timeout=30)
+        return len(out.stdout.strip().splitlines()) + 1
+    except (OSError, subprocess.SubprocessError):
+        return 1
 
 
 def update_readme(line):

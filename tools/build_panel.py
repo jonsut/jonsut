@@ -8,6 +8,7 @@ loaded when an SVG renders inside an <img> tag, which is how GitHub embeds it.
 Outlines also mean no font binary is redistributed.
 """
 
+import json
 import os
 
 import uharfbuzz as hb
@@ -71,6 +72,23 @@ class Shaper:
             + "</g>"
         )
         return group, pen_x * scale
+
+    def glyph(self, char):
+        """Outline and advance for one character, in font units.
+
+        Shaped one at a time on purpose. A dateline is set in tracked-out caps, so
+        there are no ligatures to form and the kerning HarfBuzz would apply across
+        a pair is swamped by the tracking. Losing it costs a fraction of a pixel
+        and buys a table the Action can compose from without a font.
+        """
+        buf = hb.Buffer()
+        buf.add_str(char)
+        buf.guess_segment_properties()
+        hb.shape(self.hbfont, buf, {"liga": False, "clig": False, "dlig": False})
+        info, pos = buf.glyph_infos[0], buf.glyph_positions[0]
+        pen = SVGPathPen(self.glyphset)
+        self.glyphset[self.order[info.codepoint]].draw(pen)
+        return pen.getCommands(), pos.x_advance
 
 
 # ------------------------------------------------------------------ the header
@@ -139,6 +157,7 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
 {tagline_run}
 <line class="rule" x1="0" y1="126" x2="{W}" y2="126" stroke-width="1"/>
 {label_run}
+<!--DATELINE--><!--/DATELINE-->
 </svg>
 """
 
@@ -146,6 +165,51 @@ out = os.path.join(ROOT, "header.svg")
 with open(out, "w") as fh:
     fh.write(svg)
 print(f"wrote {out} ({len(svg)} bytes), label run width {label_w:.1f}px")
+
+
+# ---------------------------------------------------- the dateline glyph table
+
+# The daily Action has no fonts installed and cannot shape text, so the dateline
+# would have to fall back to a system sans and break the panel's one typographic
+# voice. Outlining the forty-odd glyphs a date can need, once, here, lets the
+# Action compose one from committed path data instead. No font binary is shipped:
+# these are the outlines of a fixed character set, not a subsettable face.
+UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+DIGITS = "0123456789"
+PUNCT = " .,'°:-()%/+!?&"
+
+
+def emit(name, font, size, chars, tracking=0.0, note=""):
+    shaper = Shaper(font)
+    glyphs = {}
+    for char in chars:
+        d, advance = shaper.glyph(char)
+        glyphs[char] = {"d": d, "w": advance} if d else {"w": advance}
+    table = {"note": note, "upem": shaper.upem, "size": size,
+             "tracking": tracking, "glyphs": glyphs}
+    out = os.path.join(ROOT, "data", f"{name}-glyphs.json")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, "w") as fh:
+        json.dump(table, fh, separators=(",", ":"))
+    print(f"wrote {out} ({os.path.getsize(out) / 1024:.0f}KB), {len(glyphs)} glyphs")
+
+
+# Semibold, where the label line opposite is Regular. The date is the one thing on
+# the masthead that changed this morning, and standing furniture should not carry
+# the same weight as news.
+emit("dateline", DISPLAY_SEMIBOLD, 11.5, UPPER + DIGITS + " .,·",
+     tracking=0.11, note="PP Neue Montreal Semibold caps for the masthead dateline.")
+
+# The lede is a whole sentence that changes every morning, so it needs the full
+# set rather than the forty glyphs a date does. Text Book: the display cut is
+# drawn for headlines and gets tight at running-text sizes.
+emit("lede", TEXT_BOOK, 20, UPPER + UPPER.lower() + DIGITS + PUNCT,
+     note="PP Neue Montreal Text Book for the daily lede.")
+
+# Display weight, full set. Outlines carry no size of their own, so one table sets
+# a 12px caption and a 70px headline equally well; only the weight has to be right.
+emit("display", DISPLAY_SEMIBOLD, 56, UPPER + UPPER.lower() + DIGITS + PUNCT,
+     note="PP Neue Montreal Semibold for cover headlines, at any size.")
 
 
 # ------------------------------------------------------- the section headline
