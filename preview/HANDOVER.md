@@ -1,5 +1,8 @@
 # Handover, 3 August 2026
 
+*Updated after the shirts shipped in `2074e91`. The CHAMPIONS panel that was
+explored alongside them has been dropped and removed from this branch.*
+
 Two separate pieces of work. One is live on the profile. The other is a design
 exploration preserved on `prototype/arsenal-callout`; it is not wired into the
 README or present on `main`.
@@ -93,33 +96,49 @@ same reason: nothing ships that nothing uses.
 
 ---
 
-## 2. Prototype: the Arsenal callout
+## 2. Shipped: the Arsenal shirts header
 
-**Preserved on `prototype/arsenal-callout`. Nothing is wired into the live
-profile.** The selected files under `preview/` are force-tracked on this branch;
-the rest of the scratch directory remains gitignored.
+**Commit `2074e91` on `main`, as `arsenal-shirts.svg`.** Shipped by a parallel
+session, which also replaced the masthead and moved the cover up under the profile
+links; that work is written up in `~/Desktop/jonsut-profile-handover-2026-08-03.md`.
+This branch, `prototype/arsenal-callout`, keeps the exploration that produced it.
 
-### Where it got to
+### What it is
 
-Three panels styled as printed shirt backs, in one 900x360 strip:
+Three panels styled as printed shirt backs, in one 900x360 strip, immediately
+under `### Football`:
 
 - **TITLES 14** on home red, with the ermine field
 - **POINTS 85** on away navy, with the 1991 print
 - **CLEAR 7** on third pale yellow, with diagonals
 
-Plus a CHAMPIONS panel (`way-bone.svg`) that can sit above it.
+It is a **fixed static asset**, not an output of the daily job. It reviews the
+2025-26 season and must not roll over to 2026-27 values.
+
+A CHAMPIONS panel was explored to sit above the strip and dropped, because it
+repeated the 85 the strip already carries. Its palette study has been removed from
+this branch; the ermine device it produced survives in `preview/colourways.py`,
+which the home shirt imports.
 
 ### Files
 
 | File | What it does |
 |---|---|
-| `preview/shirts.py` | The three shirt backs. **This is the live one.** |
-| `preview/colourways.py` | The split panel in six palettes; defines `ermine()` and `seme()`. |
-| `preview/trio.py` | The earlier bone-and-red number strip. |
-| `preview/system.py` | The Wimbledon-discipline round: rules, corner marks, edge labels. |
-| `preview/parade.py` | The `Shaper` class that sets Northbank. Imported by all of the above. |
-| `preview/banana.py` | Three constructions of the away print, side by side, to choose from. |
-| `preview/marks.py`, `arsenal_callout.py` | Earlier rounds, superseded. |
+| `preview/shirts.py` | The three shirt backs. **Generator for the shipped asset.** |
+| `preview/parade.py` | The `Shaper` class that sets Northbank. |
+| `preview/system.py` | Supplies `season()`, the football figures, to `shirts.py`. |
+| `preview/colourways.py` | `ermine()` and `seme()`, the fur on the home shirt. |
+| `preview/banana.py` | Three constructions of the away print, side by side. |
+| `preview/trio.py`, `marks.py`, `arsenal_callout.py` | Earlier rounds, superseded. |
+
+To regenerate and check against what is published:
+
+```bash
+cd preview
+/Users/jonsutton/IdeaProjects/jonsut-profile/preview/.venv/bin/python shirts.py
+# shirts.svg then matches arsenal-shirts.svg apart from <title> and aria-label,
+# which were normalised on publication. Verified 3 August 2026.
+```
 
 The original exports remain in `~/Desktop/Arsenal/exports/`; branch-local copies
 are in `preview/exports/` so the remote branch contains the exact review files.
@@ -141,7 +160,7 @@ Worth recording because two of them were real errors.
 5. **Six colourways, red held at full chroma.** The references never use a
    heritage palette straight: Wimbledon is acid yellow on deep green, the Premier
    League is neon green and aubergine. Bone won.
-6. **Shirt backs.** Current.
+6. **Shirt backs.** Shipped.
 
 ### Decisions made
 
@@ -158,20 +177,14 @@ Worth recording because two of them were real errors.
 
 ### Open questions
 
-- **Which colourway**, if the CHAMPIONS panel is used above the strip. Bone was
-  picked, but the panel's 85 and the away shirt's 85 are the same number twice in
-  one composition. Either the panel drops its number, or the strip drops to two.
-- **Northbank.** Arsenal's bespoke face. Outlining it into a public README
-  distributes the letterforms. Fine as fan use; worth knowing before it ships.
-- **14 is hand-maintained.** openfootball only carries recent seasons, so the title
-  count and the year of the previous title are constants declared at the top of
-  `trio.py`. Everything else on the panel recomputes. On a page whose argument is
-  that nothing is stale, that is the one thing a human has to touch.
+- **Northbank is published.** The asset carries outlined letterforms from Arsenal's
+  bespoke face. Known and accepted when it shipped, but it is the one licensing
+  exposure on the profile and worth revisiting if the club ever objects.
+- **The strip is frozen in 2025-26.** Nothing recomputes it, which is deliberate:
+  it is a review of that season. If it should ever go live, every figure on it
+  except the title count already comes from openfootball via `system.season()`.
 - **The away pattern** is on its third construction and is close but not exact. The
   bars could step further along the diagonal.
-- **Nothing is wired in.** To ship, it follows the cover's path: move the generator
-  to `tools/`, commit the Northbank glyph tables it needs, have the Action redraw
-  it, splice into the README.
 
 ---
 
@@ -179,7 +192,7 @@ Worth recording because two of them were real errors.
 
 ```bash
 cd preview
-./.venv/bin/python shirts.py          # or trio.py, colourways.py, banana.py
+/Users/jonsutton/IdeaProjects/jonsut-profile/preview/.venv/bin/python shirts.py
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
   --headless --disable-gpu --screenshot=shirts.png \
   --window-size=980,1300 --hide-scrollbars shirts.html
