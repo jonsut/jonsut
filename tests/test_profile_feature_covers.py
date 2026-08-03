@@ -1,3 +1,4 @@
+import ast
 from pathlib import Path
 import sys
 import tempfile
@@ -17,7 +18,9 @@ import build_plates
 class ProfileFeatureCoversTest(unittest.TestCase):
     def test_fixed_arsenal_shirts_header_contract(self):
         asset = ROOT / "arsenal-shirts.svg"
-        self.assertTrue(asset.exists())
+        self.assertTrue(
+            asset.is_file(), "approved Arsenal shirts asset is missing"
+        )
 
         asset_root = ET.fromstring(asset.read_text())
         self.assertEqual(asset_root.attrib["viewBox"], "0 0 900 360")
@@ -38,6 +41,10 @@ class ProfileFeatureCoversTest(unittest.TestCase):
             'width="900">'
         )
         self.assertEqual(readme.count(embed), 1)
+        football_fragment = (
+            f"### Football\n\n{embed}\n\nThe other national obsession."
+        )
+        self.assertEqual(readme.count(football_fragment), 1)
 
         football_heading = readme.index("### Football")
         shirts_header = readme.index(embed)
@@ -52,6 +59,33 @@ class ProfileFeatureCoversTest(unittest.TestCase):
 
         for builder in ("tools/build_plates.py", "tools/build_football.py"):
             self.assertNotIn("arsenal-shirts.svg", (ROOT / builder).read_text())
+
+        football_builder = (ROOT / "tools/build_football.py").read_text()
+        specs_dict = next(
+            (
+                node.value
+                for node in ast.walk(ast.parse(football_builder))
+                if isinstance(node, ast.Assign)
+                and isinstance(node.value, ast.Dict)
+                and any(
+                    isinstance(target, ast.Name) and target.id == "specs"
+                    for target in node.targets
+                )
+            ),
+            None,
+        )
+        self.assertIsNotNone(
+            specs_dict,
+            "tools/build_football.py must define specs as a dict literal",
+        )
+        keys = {
+            key.value
+            for key in specs_dict.keys
+            if isinstance(key, ast.Constant) and isinstance(key.value, str)
+        }
+        self.assertEqual(keys, {"results", "position", "form"})
+        generated_assets = {f"arsenal-{key}.svg" for key in keys}
+        self.assertNotIn("arsenal-shirts.svg", generated_assets)
 
     def test_live_cover_is_the_profile_hook(self):
         readme = (ROOT / "README.md").read_text()
