@@ -43,6 +43,8 @@ Method and code in [`tools/build_plates.py`](tools/build_plates.py).
 
 ### Football
 
+<img src="arsenal-shirts.svg" alt="Arsenal's 2025–26 championship season: 14 league titles, 85 points, 7 points clear" width="900">
+
 The other national obsession. Arsenal across the last 365 days, in the league and
 in Europe: every match played, where they sat in the table, and how they were
 going at the time. The bands are not an even slice of the number, because a league
