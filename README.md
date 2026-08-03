@@ -6,6 +6,10 @@ Most recently at Amazon, building applied-AI and real-time products from prototy
 
 More at [jonsut.co.uk](https://jonsut.co.uk) · [LinkedIn](https://www.linkedin.com/in/jon-sutton-b11251147)
 
+<!-- TODAY:START -->
+<img src="cover.svg" alt="Yesterday in London it was 28.2°C, which is 6.7 degrees above average. It was the warmest 2nd of August in 8 years." width="900">
+<!-- TODAY:END -->
+
 <br><br><br>
 
 <img src="section-actions.svg" alt="Data + Actions + SVG" width="900">
@@ -23,10 +27,6 @@ live data with them.
 We Brits are obsessed with the weather, so here is that obsession given a contribution
 graph. Colour shows how far each day sat from its long-term normal rather than its
 absolute value, so a mild January reads as warm and a cool August reads as cold.
-
-<!-- TODAY:START -->
-<img src="cover.svg" alt="Yesterday in London it was 28.2°C, which is 6.7 degrees above average. It was the warmest 2nd of August in 8 years." width="900">
-<!-- TODAY:END -->
 
 <img src="london-temperature.svg" alt="Daily maximum temperature in London for the last 365 days, shown as a calendar heatmap of departures from the 1991-2020 normal" width="900">
 
