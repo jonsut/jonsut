@@ -47,8 +47,15 @@ class MastheadContractTest(unittest.TestCase):
         self.assertIsNone(root.find(f".//{SVG_NS}line"))
         self.assertNotIn('class="muted"', svg_text)
         self.assertNotIn('class="label"', svg_text)
-        self.assertIn("<!--DATELINE-->", svg_text)
-        self.assertIn("<!--/DATELINE-->", svg_text)
+        self.assertNotIn("<!--DATELINE-->", svg_text)
+        self.assertNotIn("<!--/DATELINE-->", svg_text)
+
+    def test_daily_builder_does_not_reintroduce_masthead_date(self):
+        source = (ROOT / "tools" / "build_plates.py").read_text()
+
+        self.assertNotIn("import dateline", source)
+        self.assertNotIn("dateline.stamp", source)
+        self.assertNotIn("dateline:", source)
 
     def test_readme_intro_contract(self):
         lines = (ROOT / "README.md").read_text().splitlines()
@@ -60,6 +67,18 @@ class MastheadContractTest(unittest.TestCase):
         )
         self.assertEqual(lines[2], POSITIONING_COPY)
         self.assertTrue(lines[4].startswith("Most recently at Amazon,"))
+        self.assertNotIn("Recent work:", lines)
+        self.assertFalse(any("Real-time AI translation" in line for line in lines))
+        self.assertFalse(any("Currently exploring" in line for line in lines))
+        self.assertEqual(
+            lines[6],
+            "More at [jonsut.co.uk](https://jonsut.co.uk) · "
+            "[LinkedIn](https://www.linkedin.com/in/jon-sutton-b11251147)",
+        )
+        self.assertEqual(
+            lines[10],
+            '<img src="section-actions.svg" alt="Data + Actions + SVG" width="900">',
+        )
 
 
 if __name__ == "__main__":
