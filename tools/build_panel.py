@@ -154,7 +154,6 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
 {mark}
 {headline_1_run}
 {headline_2_run}
-<!--DATELINE--><!--/DATELINE-->
 </svg>
 """
 
