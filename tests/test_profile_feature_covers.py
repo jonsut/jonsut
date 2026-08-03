@@ -6,11 +6,53 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
+ARSENAL_ACCESSIBLE_NAME = (
+    "Arsenal's 2025–26 championship season: 14 league titles, "
+    "85 points, 7 points clear"
+)
 sys.path.insert(0, str(ROOT / "tools"))
 import build_plates
 
 
 class ProfileFeatureCoversTest(unittest.TestCase):
+    def test_fixed_arsenal_shirts_header_contract(self):
+        asset = ROOT / "arsenal-shirts.svg"
+        self.assertTrue(asset.exists())
+
+        asset_root = ET.fromstring(asset.read_text())
+        self.assertEqual(asset_root.attrib["viewBox"], "0 0 900 360")
+        self.assertEqual(asset_root.attrib["width"], "900")
+        self.assertEqual(asset_root.attrib["height"], "360")
+        self.assertEqual(asset_root.attrib["role"], "img")
+        self.assertEqual(
+            asset_root.attrib["aria-label"], ARSENAL_ACCESSIBLE_NAME
+        )
+        self.assertEqual(
+            asset_root.findtext("{http://www.w3.org/2000/svg}title"),
+            ARSENAL_ACCESSIBLE_NAME,
+        )
+
+        readme = (ROOT / "README.md").read_text()
+        embed = (
+            f'<img src="arsenal-shirts.svg" alt="{ARSENAL_ACCESSIBLE_NAME}" '
+            'width="900">'
+        )
+        self.assertEqual(readme.count(embed), 1)
+
+        football_heading = readme.index("### Football")
+        shirts_header = readme.index(embed)
+        football_copy = readme.index("The other national obsession.")
+        results_asset = readme.index('src="arsenal-results.svg"')
+        self.assertTrue(
+            football_heading
+            < shirts_header
+            < football_copy
+            < results_asset
+        )
+
+        for builder in ("tools/build_plates.py", "tools/build_football.py"):
+            self.assertNotIn("arsenal-shirts.svg", (ROOT / builder).read_text())
+
     def test_live_cover_is_the_profile_hook(self):
         readme = (ROOT / "README.md").read_text()
         today_start_marker = "<!-- TODAY:START -->"
