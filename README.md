@@ -1,4 +1,6 @@
-<img src="header.svg" alt="Jon Sutton, software engineer with roots in research, design and creative technology" width="900">
+<img src="header.svg" alt="Jon Sutton — Creativity + AI + Engineering" width="900">
+
+**A software engineer with roots in research, design and creative technology.**
 
 Most recently at Amazon, building applied-AI and real-time products from prototype through to production.
 

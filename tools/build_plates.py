@@ -357,11 +357,15 @@ def main():
     update_readme(f'<img src="cover.svg" alt="{line}" width="900">')
     print(f"{line}  ({moved} readings updated)")
 
-    # The dateline, on the masthead's own rule, in the panel's own type. This is
-    # the only thing on the page a reader meets before deciding what it is.
+    # The dateline sits independently at the masthead's padded lower right, in
+    # the panel's own type, without affecting the centred mark/headline group.
     stamp = f"{end:%A} {end.day} {end:%B} {end.year}".upper()
-    dateline.stamp(os.path.join(ROOT, "header.svg"),
-                   f"{stamp} · NO. {edition}", right=900, baseline=154)
+    dateline.stamp(
+        os.path.join(ROOT, "header.svg"),
+        f"{stamp} · NO. {edition}",
+        right=870,
+        baseline=176,
+    )
     print(f"dateline: {stamp} · NO. {edition}")
 
 

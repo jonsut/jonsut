@@ -97,25 +97,29 @@ class Shaper:
 # page rather than on it, and so the two panels agree with each other.
 INK, INK_DARK = "#25292e", "#e8e8ea"
 
-W, H = 900, 176
-MARK_SIZE = 68
-TEXT_X = 92
+W, H = 900, 190
+PADDING = 30
+MARK_SIZE = 108
+MARK_TOP = 41
+HEADLINE_X = PADDING + MARK_SIZE + 30
+HEADLINE_SIZE = 59
+HEADLINE_1_BASELINE = 84
+HEADLINE_2_BASELINE = 137
+ACCESSIBLE_NAME = "Jon Sutton — Creativity + AI + Engineering"
 
-name_run, _ = Shaper(DISPLAY_SEMIBOLD).run("Jon Sutton", 44, TEXT_X, 58, cls="ink")
-tagline_run, _ = Shaper(TEXT_BOOK).run(
-    "Software engineer with roots in research, design and creative technology",
-    17.5,
-    TEXT_X,
-    88,
-    cls="muted",
+headline_1_run, headline_1_w = Shaper(DISPLAY_SEMIBOLD).run(
+    "Creativity + AI",
+    HEADLINE_SIZE,
+    HEADLINE_X,
+    HEADLINE_1_BASELINE,
+    cls="ink headline",
 )
-label_run, label_w = Shaper(DISPLAY_REGULAR).run(
-    "APPLIED AI · REAL-TIME SYSTEMS · INTERFACE DESIGN",
-    11.5,
-    0,
-    154,
-    tracking=0.11,
-    cls="label",
+headline_2_run, headline_2_w = Shaper(DISPLAY_SEMIBOLD).run(
+    "+ Engineering",
+    HEADLINE_SIZE,
+    HEADLINE_X,
+    HEADLINE_2_BASELINE,
+    cls="ink headline",
 )
 
 # The two-colour mark, fixed-colour because CSS variables and currentColor do not
@@ -132,31 +136,24 @@ face_path = avatar.split('class="jon-avatar__foreground" d="')[1].split('"')[0]
 
 mark_scale = MARK_SIZE / 180
 mark = (
-    f'<g transform="translate(0 6) scale({mark_scale:.6f})">'
+    f'<g id="jonmark" transform="translate({PADDING} {MARK_TOP}) '
+    f'scale({mark_scale:.6f})">'
     f'<path d="{BLOB}" fill="#f9ff47"/>'
     f'<path d="{face_path}" fill="#171717"/>'
     "</g>"
 )
 
-svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Jon Sutton, software engineer with roots in research, design and creative technology">
-<title>Jon Sutton</title>
+svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{ACCESSIBLE_NAME}">
+<title>{ACCESSIBLE_NAME}</title>
 <style>
 .ink {{ fill: {INK}; }}
-.muted {{ fill: #63656f; }}
-.label {{ fill: #55575f; }}
-.rule {{ stroke: #b5b5b5; }}
 @media (prefers-color-scheme: dark) {{
   .ink {{ fill: {INK_DARK}; }}
-  .muted {{ fill: #9ea0a9; }}
-  .label {{ fill: #8b8d96; }}
-  .rule {{ stroke: #33383f; }}
 }}
 </style>
 {mark}
-{name_run}
-{tagline_run}
-<line class="rule" x1="0" y1="126" x2="{W}" y2="126" stroke-width="1"/>
-{label_run}
+{headline_1_run}
+{headline_2_run}
 <!--DATELINE--><!--/DATELINE-->
 </svg>
 """
@@ -164,7 +161,10 @@ svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
 out = os.path.join(ROOT, "header.svg")
 with open(out, "w") as fh:
     fh.write(svg)
-print(f"wrote {out} ({len(svg)} bytes), label run width {label_w:.1f}px")
+print(
+    f"wrote {out} ({len(svg)} bytes), "
+    f"headline widths {headline_1_w:.1f}px / {headline_2_w:.1f}px"
+)
 
 
 # ---------------------------------------------------- the dateline glyph table
