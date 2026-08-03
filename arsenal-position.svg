@@ -8,6 +8,7 @@
 .note { font-size: 12px; fill: #59636e; }
 .end { text-anchor: end; }
 .card { fill: none; stroke: #d1d9e0; stroke-width: 1; }
+.newest { fill: none; stroke: #1f2328; stroke-width: 1.5; }
 .p-void { fill: #8c9196; fill-opacity: 0.10; }
 .p0 { fill: #57606a; fill-opacity: 0.55; }
 .p1 { fill: #8c9196; fill-opacity: 0.30; }
@@ -20,6 +21,7 @@
   .icon { color: #f0f6fc; }
   .note { fill: #9198a1; }
   .card { stroke: #3d444d; }
+  .newest { stroke: #f0f6fc; }
 }
 </style>
 <g class="icon" transform="translate(0 6.74) scale(0.791667)"><!-- Icon from Unicons by Iconscout - https://github.com/Iconscout/unicons/blob/master/LICENSE --><path fill="currentColor" d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3a4 4 0 0 0 4 4h1.54A6 6 0 0 0 11 13.91V16h-1a3 3 0 0 0-3 3v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-2a3 3 0 0 0-3-3h-1v-2.09A6 6 0 0 0 16.46 12H18a4 4 0 0 0 4-4V5a1 1 0 0 0-1-1M6 10a2 2 0 0 1-2-2V6h2v2a6 6 0 0 0 .35 2Zm8 8a1 1 0 0 1 1 1v1H9v-1a1 1 0 0 1 1-1Zm2-10a4 4 0 0 1-8 0V4h8Zm4 0a2 2 0 0 1-2 2h-.35A6 6 0 0 0 18 8V6h2Z"/></g>
