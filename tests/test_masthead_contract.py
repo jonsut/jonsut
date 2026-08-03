@@ -76,7 +76,7 @@ class MastheadContractTest(unittest.TestCase):
             "[LinkedIn](https://www.linkedin.com/in/jon-sutton-b11251147)",
         )
         self.assertEqual(
-            lines[10],
+            lines[14],
             '<img src="section-actions.svg" alt="Data + Actions + SVG" width="900">',
         )
 
