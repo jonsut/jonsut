@@ -29,7 +29,6 @@ import urllib.request
 from datetime import date, timedelta
 
 import cover
-import dateline
 import news
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -356,17 +355,6 @@ def main():
     line = cover.render(history, end, edition, os.path.join(ROOT, "cover.svg"))
     update_readme(f'<img src="cover.svg" alt="{line}" width="900">')
     print(f"{line}  ({moved} readings updated)")
-
-    # The dateline sits independently at the masthead's padded lower right, in
-    # the panel's own type, without affecting the centred mark/headline group.
-    stamp = f"{end:%A} {end.day} {end:%B} {end.year}".upper()
-    dateline.stamp(
-        os.path.join(ROOT, "header.svg"),
-        f"{stamp} · NO. {edition}",
-        right=870,
-        baseline=176,
-    )
-    print(f"dateline: {stamp} · NO. {edition}")
 
 
 def editions():
