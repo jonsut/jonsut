@@ -105,7 +105,7 @@ HEADLINE_X = PADDING + MARK_SIZE + 30
 HEADLINE_SIZE = 59
 HEADLINE_1_BASELINE = 84
 HEADLINE_2_BASELINE = 137
-ACCESSIBLE_NAME = "Jon Sutton — Creativity + AI + Engineering"
+ACCESSIBLE_NAME = "Jon Sutton: Creativity + AI + Engineering"
 
 headline_1_run, headline_1_w = Shaper(DISPLAY_SEMIBOLD).run(
     "Creativity + AI",
