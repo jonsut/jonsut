@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 212" width="900" height="212" role="img" aria-label="Arsenal Position. Champions. Title secured on 19 May 2026. Position after each matchday, held until the next. Gold is the trophy, not the table.">
-<title>League position in London</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 212" width="900" height="212" role="img" aria-label="Arsenal Position. Champions. Title secured on 19 May 2026. Position after each matchday, held until the next. Gold is the trophy, not the table. Redrawn daily by 8am UK.">
+<title>Arsenal league position</title>
 <style>text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
 .head { font-size: 16px; fill: #1f2328; }
 .strong { font-weight: 600; }
@@ -27,6 +27,7 @@
 <g class="icon" transform="translate(0 6.74) scale(0.791667)"><!-- Icon from Unicons by Iconscout - https://github.com/Iconscout/unicons/blob/master/LICENSE --><path fill="currentColor" d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3a4 4 0 0 0 4 4h1.54A6 6 0 0 0 11 13.91V16h-1a3 3 0 0 0-3 3v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-2a3 3 0 0 0-3-3h-1v-2.09A6 6 0 0 0 16.46 12H18a4 4 0 0 0 4-4V5a1 1 0 0 0-1-1M6 10a2 2 0 0 1-2-2V6h2v2a6 6 0 0 0 .35 2Zm8 8a1 1 0 0 1 1 1v1H9v-1a1 1 0 0 1 1-1Zm2-10a4 4 0 0 1-8 0V4h8Zm4 0a2 2 0 0 1-2 2h-.35A6 6 0 0 0 18 8V6h2Z"/></g>
 <text class="head" x="27" y="22"><tspan class="strong">Arsenal Position.</tspan>&#160;Champions. Title secured on 19 May 2026</text>
 <rect class="card" x="0.5" y="34.5" width="899" height="176" rx="6"/>
+<text class="note end" x="884" y="22">Redrawn daily by 8am UK</text>
 <text class="axis" x="114" y="62">Sep</text>
 <text class="axis" x="174" y="62">Oct</text>
 <text class="axis" x="234" y="62">Nov</text>
