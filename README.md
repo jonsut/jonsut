@@ -1,4 +1,4 @@
-<img src="header.svg" alt="Jon Sutton — Creativity + AI + Engineering" width="900">
+<img src="header.svg" alt="Jon Sutton: Creativity + AI + Engineering" width="900">
 
 **A software engineer with roots in research, design and creative technology.**
 

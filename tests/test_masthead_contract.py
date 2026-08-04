@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 SVG_NS = "{http://www.w3.org/2000/svg}"
-ACCESSIBLE_NAME = "Jon Sutton — Creativity + AI + Engineering"
+ACCESSIBLE_NAME = "Jon Sutton: Creativity + AI + Engineering"
 POSITIONING_COPY = (
     "**A software engineer with roots in research, design and creative "
     "technology.**"
@@ -63,7 +63,7 @@ class MastheadContractTest(unittest.TestCase):
         self.assertEqual(
             lines[0],
             '<img src="header.svg" '
-            'alt="Jon Sutton — Creativity + AI + Engineering" width="900">',
+            'alt="Jon Sutton: Creativity + AI + Engineering" width="900">',
         )
         self.assertEqual(lines[2], POSITIONING_COPY)
         self.assertTrue(lines[4].startswith("Most recently at Amazon,"))
