@@ -270,14 +270,14 @@ def main():
                      if reign else "Season in progress")
     specs = {
         "results": dict(
-            title="Results", label="Arsenal Results.", series=results,
+            title="Arsenal results", label="Arsenal Results.", series=results,
             cuts=[0, 1], ends=("Lost", "Won"),
             hues=[NAVY, NAVY, RED], alpha=[0.80, 0.38, 0.85],
             head=f"{won} won, {drew} drawn, {len(results) - won - drew} lost "
                  f"in {len(results)} matches",
             note="Premier League and Champions League. Blank days had no match"),
         "position": dict(
-            title="League position", label="Arsenal Position.", series=position,
+            title="Arsenal league position", label="Arsenal Position.", series=position,
             # Bottom half, mid-table, top six, 2nd, 1st, champions. Written as
             # merit() so the thresholds still read as league positions here.
             cuts=[merit(11) + 1, merit(7) + 1, merit(3) + 1, merit(2) + 1, CHAMPION],
@@ -288,7 +288,7 @@ def main():
             note="Position after each matchday, held until the next. "
                  "Gold is the trophy, not the table"),
         "form": dict(
-            title="Form", label="Arsenal Form.", series=form,
+            title="Arsenal form", label="Arsenal Form.", series=form,
             # Counted in wins: a win or fewer, two, three, four, then a perfect
             # five. Absolute thresholds mean one season reads against another,
             # which banding on this season's own spread would destroy.

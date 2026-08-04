@@ -143,6 +143,17 @@ ICON_GAP = 8
 HEAD_SIZE = 16
 CAP = 0.72                           # cap height of the system sans, near enough
 HEAD_BASE = HEAD_H - 12
+
+# Sits right-aligned on the header row, opposite the plate's own headline. A reader
+# looking at a year of squares has no way to tell whether any of it moved since
+# yesterday, and "daily" does not say by when, so the stamp gives them a deadline.
+#
+# 8am, not 7am: the workflow is scheduled for 06:41 UTC, which is 07:41 UK under
+# BST. Under GMT it is 06:41. The claim has to hold in summer as well as winter.
+# The header row carries this comfortably; the footer does not, because the legend
+# on arsenal-form.svg leaves only ~136px and this needs ~138px.
+REDRAW_NOTE = "Redrawn daily by 8am UK"
+
 # All three are drawn centred on the 24-unit box, so one placement aligns the set
 # and no per-icon nudge is needed. Centred on the headline's cap band rather than
 # its baseline, which is where the eye reads the line as sitting.
@@ -190,6 +201,7 @@ def render(key, spec, start, end, path):
         f'scale({scale:.6f})">{ICONS[key]}</g>',
         f'<text class="head" x="{TEXT_X}" y="{HEAD_BASE}">'
         f'<tspan class="strong">{spec["label"]}</tspan>&#160;{spec["head"]}</text>',
+        f'<text class="note end" x="{W - PAD}" y="{HEAD_BASE}">{REDRAW_NOTE}</text>',
     ]
 
     card_top = HEAD_H
@@ -265,10 +277,13 @@ def render(key, spec, start, end, path):
               "  .newest { stroke: #f0f6fc; }\n"
               "}\n")
 
-    label = f'{spec["label"]} {spec["head"]}. {spec["note"]}.'
+    label = f'{spec["label"]} {spec["head"]}. {spec["note"]}. {REDRAW_NOTE}.'
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {height}" '
            f'width="{W}" height="{height}" role="img" aria-label="{label}">\n'
-           f'<title>{spec["title"]} in London</title>\n<style>{style}</style>\n'
+           # The title is taken whole from the spec. It used to append " in London",
+           # which is a London fact living in a renderer the football plates also
+           # use, so they published "Results in London" and "Form in London".
+           f'<title>{spec["title"]}</title>\n<style>{style}</style>\n'
            + "\n".join(parts) + "\n</svg>\n")
     open(path, "w").write(svg)
     return height
@@ -317,21 +332,21 @@ def main():
 
     specs = {
         "temperature": dict(
-            title="Temperature", label="London Temp.",
+            title="Temperature in London", label="London Temp.",
             series=temp_anom, cuts=[-2.5, -1, 1, 3],
             mark_newest=True, ends=("Cooler", "Warmer"), hues=[TEAL, TEAL, NEUTRAL, CORAL, CORAL],
             head=f"{abs(t_mean):.1f}°C {'above' if t_mean >= 0 else 'below'} "
                  "average in the last year",
             note=f"Daily maximum against the {tb} normal"),
         "rainfall": dict(
-            title="Rainfall", label="London Rainfall.",
+            title="Rainfall in London", label="London Rainfall.",
             series=rain_ratio, cuts=[0.5, 0.8, 1.25, 2.0],
             mark_newest=True, ends=("Drier", "Wetter"), hues=[GREY, GREY, NEUTRAL, TEAL, TEAL],
             head=f"{abs(r_mean - 1) * 100:.0f}% {'more' if r_mean >= 1 else 'less'} "
                  "rain than average in the last year",
             note=f"30-day totals against the {tb} normal"),
         "particulates": dict(
-            title="Fine particulates", label="London Air Quality.",
+            title="Fine particulates in London", label="London Air Quality.",
             series=pm_anom, cuts=[-6, -4, -2, 0],
             mark_newest=True, ends=("Cleaner", "Dirtier"), hues=[GREEN, GREEN, NEUTRAL, GREY, GREY],
             head=f"{abs(p_mean):.1f} µg/m³ {'cleaner' if p_mean < 0 else 'dirtier'} "
