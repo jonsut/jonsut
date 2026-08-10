@@ -196,7 +196,7 @@ def emit(name, font, size, chars, tracking=0.0, note=""):
 # Semibold, where the label line opposite is Regular. The date is the one thing on
 # the masthead that changed this morning, and standing furniture should not carry
 # the same weight as news.
-emit("dateline", DISPLAY_SEMIBOLD, 11.5, UPPER + DIGITS + " .,·",
+emit("dateline", DISPLAY_SEMIBOLD, 11.5, UPPER + DIGITS + " .,·/-:'°",
      tracking=0.11, note="PP Neue Montreal Semibold caps for the masthead dateline.")
 
 # The lede is a whole sentence that changes every morning, so it needs the full
