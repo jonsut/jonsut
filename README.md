@@ -14,19 +14,18 @@ More at [jonsut.co.uk](https://jonsut.co.uk) · [LinkedIn](https://www.linkedin.
 
 <img src="section-actions.svg" alt="Data + Actions + SVG" width="900">
 
-## Contribution graphs for things that aren't contributions
+## Not contribution graphs
 
-GitHub's contribution graph is a decent piece of information design doing exactly one
-job. This is an experiment in pointing it at other things: any year of daily values,
-banded into five levels, rebuilt every morning by a GitHub Action. Half curiosity
-about what the form can carry, half an excuse to learn Actions properly by publishing
-live data with them.
+GitHub's contribution graph is a great piece of information design that does one
+specific job. This is an experiment in pointing it at other things: any year of daily
+values, banded into five levels, rebuilt every morning by a GitHub Action. (And an
+excuse to learn Actions properly by publishing live data with them.)
 
 ### London environment
 
-We Brits are obsessed with the weather, so here is that obsession given a contribution
-graph. Colour shows how far each day sat from its long-term normal rather than its
-absolute value, so a mild January reads as warm and a cool August reads as cold.
+Complaining about the weather is of course a treasured national pastime in the UK, so
+this graph provides some hard supporting data. Colour shows how far each day sat from
+its long-term normal rather than its absolute value, so eg a mild January reads as warm.
 
 <img src="london-temperature.svg" alt="Daily maximum temperature in London for the last 365 days, shown as a calendar heatmap of departures from the 1991-2020 normal" width="900">
 
@@ -45,12 +44,13 @@ Method and code in [`tools/build_plates.py`](tools/build_plates.py).
 
 <img src="arsenal-shirts.svg" alt="Arsenal's 2025–26 championship season: 14 league titles, 85 points, 7 points clear" width="900">
 
-The other national obsession. Arsenal across the last 365 days, in the league and
-in Europe: every match played, where they sat in the table, and how they were
-going at the time. The bands are not an even slice of the number, because a league
-position is not a quantity. It is a set of thresholds that mean different things
-to a supporter, so the steps are the ones that have names: the trophy, the title,
-the runner-up, Europe, mid-table, the bottom half.
+Possibly the most important data to determine how my personal day goes. This graph
+shows Arsenal across the last 365 days, in the league and in Europe: every match
+played, where they sat in the table, and form. This one was an interesting exercise
+because league positions as evenly sliced bands didn't read right: as a supporter,
+the difference between 1st and 2nd in the league definitely doesn't feel the same as
+the difference between 2nd and 3rd. So the bands mark the most important thresholds
+instead.
 
 <img src="arsenal-results.svg" alt="Arsenal's results over the last 365 days, shown as a calendar heatmap of wins, draws and losses in the Premier League and Champions League" width="900">
 
@@ -58,10 +58,9 @@ the runner-up, Europe, mid-table, the bottom half.
 
 <img src="arsenal-form.svg" alt="Arsenal's rolling form over the last 365 days, shown as a calendar heatmap of points won in the previous five matches" width="900">
 
-A season in review rather than a live feed, unlike the plates above. The source is
-volunteer-maintained and publishes in bursts: across 2025-26 the Premier League
-file was updated 22 times, and once went 97 days without a change. The job runs
-every morning regardless, so the plates follow the data as it lands.
+Unlike the plates above, this one shows the season in review rather than a live feed.
+The source is volunteer-maintained and publishes in bursts. The job runs every morning
+regardless, so the plates follow the data as it updates.
 
 Match data from [openfootball](https://github.com/openfootball/football.json),
 released into the public domain under CC0. The FA Cup and the League Cup are not
