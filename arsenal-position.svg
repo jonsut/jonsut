@@ -28,76 +28,82 @@
 <text class="head" x="27" y="22"><tspan class="strong">Arsenal Position.</tspan>&#160;Champions. Title secured on 19 May 2026</text>
 <rect class="card" x="0.5" y="34.5" width="899" height="176" rx="6"/>
 <text class="note end" x="884" y="22">Redrawn daily by 8am UK</text>
-<text class="axis" x="114" y="62">Sep</text>
-<text class="axis" x="174" y="62">Oct</text>
-<text class="axis" x="234" y="62">Nov</text>
-<text class="axis" x="309" y="62">Dec</text>
-<text class="axis" x="369" y="62">Jan</text>
-<text class="axis" x="429" y="62">Feb</text>
-<text class="axis" x="489" y="62">Mar</text>
-<text class="axis" x="564" y="62">Apr</text>
-<text class="axis" x="624" y="62">May</text>
-<text class="axis" x="699" y="62">Jun</text>
-<text class="axis" x="759" y="62">Jul</text>
-<text class="axis" x="819" y="62">Aug</text>
+<text class="axis" x="99" y="62">Sep</text>
+<text class="axis" x="159" y="62">Oct</text>
+<text class="axis" x="219" y="62">Nov</text>
+<text class="axis" x="294" y="62">Dec</text>
+<text class="axis" x="354" y="62">Jan</text>
+<text class="axis" x="414" y="62">Feb</text>
+<text class="axis" x="474" y="62">Mar</text>
+<text class="axis" x="549" y="62">Apr</text>
+<text class="axis" x="609" y="62">May</text>
+<text class="axis" x="684" y="62">Jun</text>
+<text class="axis" x="744" y="62">Jul</text>
+<text class="axis" x="804" y="62">Aug</text>
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="p-void" x="54" y="162" width="12" height="12" rx="2"/>
-<rect class="p-void" x="69" y="72" width="12" height="12" rx="2"/>
-<rect class="p-void" x="69" y="87" width="12" height="12" rx="2"/>
-<rect class="p-void" x="69" y="102" width="12" height="12" rx="2"/>
-<rect class="p-void" x="69" y="117" width="12" height="12" rx="2"/>
-<rect class="p-void" x="69" y="132" width="12" height="12" rx="2"/>
-<rect class="p-void" x="69" y="147" width="12" height="12" rx="2"/>
-<rect class="p2" x="69" y="162" width="12" height="12" rx="2"/>
-<rect class="p2" x="84" y="72" width="12" height="12" rx="2"/>
-<rect class="p2" x="84" y="87" width="12" height="12" rx="2"/>
-<rect class="p2" x="84" y="102" width="12" height="12" rx="2"/>
-<rect class="p2" x="84" y="117" width="12" height="12" rx="2"/>
-<rect class="p1" x="84" y="132" width="12" height="12" rx="2"/>
-<rect class="p4" x="84" y="147" width="12" height="12" rx="2"/>
-<rect class="p4" x="84" y="162" width="12" height="12" rx="2"/>
-<rect class="p4" x="99" y="72" width="12" height="12" rx="2"/>
-<rect class="p4" x="99" y="87" width="12" height="12" rx="2"/>
-<rect class="p4" x="99" y="102" width="12" height="12" rx="2"/>
-<rect class="p4" x="99" y="117" width="12" height="12" rx="2"/>
-<rect class="p4" x="99" y="132" width="12" height="12" rx="2"/>
-<rect class="p3" x="99" y="147" width="12" height="12" rx="2"/>
+<rect class="p-void" x="54" y="72" width="12" height="12" rx="2"/>
+<rect class="p-void" x="54" y="87" width="12" height="12" rx="2"/>
+<rect class="p-void" x="54" y="102" width="12" height="12" rx="2"/>
+<rect class="p-void" x="54" y="117" width="12" height="12" rx="2"/>
+<rect class="p-void" x="54" y="132" width="12" height="12" rx="2"/>
+<rect class="p-void" x="54" y="147" width="12" height="12" rx="2"/>
+<rect class="p2" x="54" y="162" width="12" height="12" rx="2"/>
+<rect class="p2" x="69" y="72" width="12" height="12" rx="2"/>
+<rect class="p2" x="69" y="87" width="12" height="12" rx="2"/>
+<rect class="p2" x="69" y="102" width="12" height="12" rx="2"/>
+<rect class="p2" x="69" y="117" width="12" height="12" rx="2"/>
+<rect class="p1" x="69" y="132" width="12" height="12" rx="2"/>
+<rect class="p4" x="69" y="147" width="12" height="12" rx="2"/>
+<rect class="p4" x="69" y="162" width="12" height="12" rx="2"/>
+<rect class="p4" x="84" y="72" width="12" height="12" rx="2"/>
+<rect class="p4" x="84" y="87" width="12" height="12" rx="2"/>
+<rect class="p4" x="84" y="102" width="12" height="12" rx="2"/>
+<rect class="p4" x="84" y="117" width="12" height="12" rx="2"/>
+<rect class="p4" x="84" y="132" width="12" height="12" rx="2"/>
+<rect class="p3" x="84" y="147" width="12" height="12" rx="2"/>
+<rect class="p2" x="84" y="162" width="12" height="12" rx="2"/>
+<rect class="p2" x="99" y="72" width="12" height="12" rx="2"/>
+<rect class="p2" x="99" y="87" width="12" height="12" rx="2"/>
+<rect class="p2" x="99" y="102" width="12" height="12" rx="2"/>
+<rect class="p2" x="99" y="117" width="12" height="12" rx="2"/>
+<rect class="p2" x="99" y="132" width="12" height="12" rx="2"/>
+<rect class="p2" x="99" y="147" width="12" height="12" rx="2"/>
 <rect class="p2" x="99" y="162" width="12" height="12" rx="2"/>
 <rect class="p2" x="114" y="72" width="12" height="12" rx="2"/>
 <rect class="p2" x="114" y="87" width="12" height="12" rx="2"/>
 <rect class="p2" x="114" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="114" y="117" width="12" height="12" rx="2"/>
 <rect class="p2" x="114" y="132" width="12" height="12" rx="2"/>
-<rect class="p2" x="114" y="147" width="12" height="12" rx="2"/>
-<rect class="p2" x="114" y="162" width="12" height="12" rx="2"/>
-<rect class="p2" x="129" y="72" width="12" height="12" rx="2"/>
-<rect class="p2" x="129" y="87" width="12" height="12" rx="2"/>
-<rect class="p2" x="129" y="102" width="12" height="12" rx="2"/>
-<rect class="p2" x="129" y="117" width="12" height="12" rx="2"/>
-<rect class="p2" x="129" y="132" width="12" height="12" rx="2"/>
-<rect class="p4" x="129" y="147" width="12" height="12" rx="2"/>
+<rect class="p4" x="114" y="147" width="12" height="12" rx="2"/>
+<rect class="p3" x="114" y="162" width="12" height="12" rx="2"/>
+<rect class="p3" x="129" y="72" width="12" height="12" rx="2"/>
+<rect class="p3" x="129" y="87" width="12" height="12" rx="2"/>
+<rect class="p3" x="129" y="102" width="12" height="12" rx="2"/>
+<rect class="p3" x="129" y="117" width="12" height="12" rx="2"/>
+<rect class="p3" x="129" y="132" width="12" height="12" rx="2"/>
+<rect class="p2" x="129" y="147" width="12" height="12" rx="2"/>
 <rect class="p3" x="129" y="162" width="12" height="12" rx="2"/>
 <rect class="p3" x="144" y="72" width="12" height="12" rx="2"/>
 <rect class="p3" x="144" y="87" width="12" height="12" rx="2"/>
 <rect class="p3" x="144" y="102" width="12" height="12" rx="2"/>
 <rect class="p3" x="144" y="117" width="12" height="12" rx="2"/>
 <rect class="p3" x="144" y="132" width="12" height="12" rx="2"/>
-<rect class="p2" x="144" y="147" width="12" height="12" rx="2"/>
+<rect class="p1" x="144" y="147" width="12" height="12" rx="2"/>
 <rect class="p3" x="144" y="162" width="12" height="12" rx="2"/>
 <rect class="p3" x="159" y="72" width="12" height="12" rx="2"/>
 <rect class="p3" x="159" y="87" width="12" height="12" rx="2"/>
 <rect class="p3" x="159" y="102" width="12" height="12" rx="2"/>
 <rect class="p3" x="159" y="117" width="12" height="12" rx="2"/>
-<rect class="p3" x="159" y="132" width="12" height="12" rx="2"/>
-<rect class="p1" x="159" y="147" width="12" height="12" rx="2"/>
-<rect class="p3" x="159" y="162" width="12" height="12" rx="2"/>
-<rect class="p3" x="174" y="72" width="12" height="12" rx="2"/>
-<rect class="p3" x="174" y="87" width="12" height="12" rx="2"/>
-<rect class="p3" x="174" y="102" width="12" height="12" rx="2"/>
-<rect class="p3" x="174" y="117" width="12" height="12" rx="2"/>
-<rect class="p2" x="174" y="132" width="12" height="12" rx="2"/>
+<rect class="p2" x="159" y="132" width="12" height="12" rx="2"/>
+<rect class="p4" x="159" y="147" width="12" height="12" rx="2"/>
+<rect class="p4" x="159" y="162" width="12" height="12" rx="2"/>
+<rect class="p4" x="174" y="72" width="12" height="12" rx="2"/>
+<rect class="p4" x="174" y="87" width="12" height="12" rx="2"/>
+<rect class="p4" x="174" y="102" width="12" height="12" rx="2"/>
+<rect class="p4" x="174" y="117" width="12" height="12" rx="2"/>
+<rect class="p4" x="174" y="132" width="12" height="12" rx="2"/>
 <rect class="p4" x="174" y="147" width="12" height="12" rx="2"/>
 <rect class="p4" x="174" y="162" width="12" height="12" rx="2"/>
 <rect class="p4" x="189" y="72" width="12" height="12" rx="2"/>
@@ -291,16 +297,16 @@
 <rect class="p4" x="579" y="162" width="12" height="12" rx="2"/>
 <rect class="p4" x="594" y="72" width="12" height="12" rx="2"/>
 <rect class="p4" x="594" y="87" width="12" height="12" rx="2"/>
-<rect class="p4" x="594" y="102" width="12" height="12" rx="2"/>
-<rect class="p4" x="594" y="117" width="12" height="12" rx="2"/>
-<rect class="p4" x="594" y="132" width="12" height="12" rx="2"/>
+<rect class="p3" x="594" y="102" width="12" height="12" rx="2"/>
+<rect class="p3" x="594" y="117" width="12" height="12" rx="2"/>
+<rect class="p3" x="594" y="132" width="12" height="12" rx="2"/>
 <rect class="p4" x="594" y="147" width="12" height="12" rx="2"/>
 <rect class="p4" x="594" y="162" width="12" height="12" rx="2"/>
 <rect class="p4" x="609" y="72" width="12" height="12" rx="2"/>
 <rect class="p4" x="609" y="87" width="12" height="12" rx="2"/>
-<rect class="p3" x="609" y="102" width="12" height="12" rx="2"/>
-<rect class="p3" x="609" y="117" width="12" height="12" rx="2"/>
-<rect class="p3" x="609" y="132" width="12" height="12" rx="2"/>
+<rect class="p4" x="609" y="102" width="12" height="12" rx="2"/>
+<rect class="p4" x="609" y="117" width="12" height="12" rx="2"/>
+<rect class="p4" x="609" y="132" width="12" height="12" rx="2"/>
 <rect class="p4" x="609" y="147" width="12" height="12" rx="2"/>
 <rect class="p4" x="609" y="162" width="12" height="12" rx="2"/>
 <rect class="p4" x="624" y="72" width="12" height="12" rx="2"/>
@@ -318,13 +324,13 @@
 <rect class="p4" x="639" y="147" width="12" height="12" rx="2"/>
 <rect class="p4" x="639" y="162" width="12" height="12" rx="2"/>
 <rect class="p4" x="654" y="72" width="12" height="12" rx="2"/>
-<rect class="p4" x="654" y="87" width="12" height="12" rx="2"/>
-<rect class="p4" x="654" y="102" width="12" height="12" rx="2"/>
-<rect class="p4" x="654" y="117" width="12" height="12" rx="2"/>
-<rect class="p4" x="654" y="132" width="12" height="12" rx="2"/>
-<rect class="p4" x="654" y="147" width="12" height="12" rx="2"/>
-<rect class="p4" x="654" y="162" width="12" height="12" rx="2"/>
-<rect class="p4" x="669" y="72" width="12" height="12" rx="2"/>
+<rect class="p5" x="654" y="87" width="12" height="12" rx="2"/>
+<rect class="p5" x="654" y="102" width="12" height="12" rx="2"/>
+<rect class="p5" x="654" y="117" width="12" height="12" rx="2"/>
+<rect class="p5" x="654" y="132" width="12" height="12" rx="2"/>
+<rect class="p5" x="654" y="147" width="12" height="12" rx="2"/>
+<rect class="p5" x="654" y="162" width="12" height="12" rx="2"/>
+<rect class="p5" x="669" y="72" width="12" height="12" rx="2"/>
 <rect class="p5" x="669" y="87" width="12" height="12" rx="2"/>
 <rect class="p5" x="669" y="102" width="12" height="12" rx="2"/>
 <rect class="p5" x="669" y="117" width="12" height="12" rx="2"/>
@@ -402,12 +408,6 @@
 <rect class="p5" x="819" y="147" width="12" height="12" rx="2"/>
 <rect class="p5" x="819" y="162" width="12" height="12" rx="2"/>
 <rect class="p5" x="834" y="72" width="12" height="12" rx="2"/>
-<rect class="p5" x="834" y="87" width="12" height="12" rx="2"/>
-<rect class="p5" x="834" y="102" width="12" height="12" rx="2"/>
-<rect class="p5" x="834" y="117" width="12" height="12" rx="2"/>
-<rect class="p5" x="834" y="132" width="12" height="12" rx="2"/>
-<rect class="p5" x="834" y="147" width="12" height="12" rx="2"/>
-<rect class="p5" x="834" y="162" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Position after each matchday, held until the next. Gold is the trophy, not the table</text>
 <text class="note end" x="725.6" y="194">Bottom half</text>
 <rect class="p0" x="731.6" y="184" width="12" height="12" rx="2"/>
