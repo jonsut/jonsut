@@ -7,7 +7,7 @@ Most recently at Amazon, building applied-AI and real-time products from prototy
 More at [jonsut.co.uk](https://jonsut.co.uk) · [LinkedIn](https://www.linkedin.com/in/jon-sutton-b11251147)
 
 <!-- TODAY:START -->
-<img src="cover.svg" alt="Yesterday in London it was 25.3°C, which is 3.8 degrees above average. That is 4.4 degrees cooler than the same date last year." width="900">
+<img src="cover.svg" alt="Yesterday in London it was 32.8°C, which is 11.3 degrees above average. It was the warmest 12th of August in 86 years." width="900">
 <!-- TODAY:END -->
 
 <br><br><br>
