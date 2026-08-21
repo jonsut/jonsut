@@ -42,7 +42,6 @@
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="f-void" x="54" y="102" width="12" height="12" rx="2"/>
 <rect class="f-void" x="54" y="117" width="12" height="12" rx="2"/>
 <rect class="f-void" x="54" y="132" width="12" height="12" rx="2"/>
 <rect class="f-void" x="54" y="147" width="12" height="12" rx="2"/>
@@ -407,6 +406,7 @@
 <rect class="f-void" x="834" y="72" width="12" height="12" rx="2"/>
 <rect class="f-void" x="834" y="87" width="12" height="12" rx="2"/>
 <rect class="f-void" x="834" y="102" width="12" height="12" rx="2"/>
+<rect class="f-void" x="834" y="117" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Points won in the previous five matches, out of a possible 15. Three for a win, one for a draw</text>
 <text class="note end" x="753.8" y="194">Poor</text>
 <rect class="f0" x="759.8" y="184" width="12" height="12" rx="2"/>
