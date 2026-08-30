@@ -42,7 +42,6 @@
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="p1" x="54" y="132" width="12" height="12" rx="2"/>
 <rect class="p1" x="54" y="147" width="12" height="12" rx="2"/>
 <rect class="p2" x="54" y="162" width="12" height="12" rx="2"/>
 <rect class="p1" x="69" y="72" width="12" height="12" rx="2"/>
@@ -407,7 +406,8 @@
 <rect class="p4" x="834" y="102" width="12" height="12" rx="2"/>
 <rect class="p3" x="834" y="117" width="12" height="12" rx="2"/>
 <rect class="p1" x="834" y="132" width="12" height="12" rx="2"/>
-<rect class="newest" x="832" y="130" width="16" height="16" rx="4"/>
+<rect class="p1" x="834" y="147" width="12" height="12" rx="2"/>
+<rect class="newest" x="832" y="145" width="16" height="16" rx="4"/>
 <text class="note" x="54" y="194">PM2.5 daily mean against the 2015-2025 normal</text>
 <text class="note end" x="753.8" y="194">Cleaner</text>
 <rect class="p0" x="759.8" y="184" width="12" height="12" rx="2"/>
