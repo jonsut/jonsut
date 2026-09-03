@@ -40,7 +40,6 @@
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="r-void" x="54" y="87" width="12" height="12" rx="2"/>
 <rect class="r-void" x="54" y="102" width="12" height="12" rx="2"/>
 <rect class="r-void" x="54" y="117" width="12" height="12" rx="2"/>
 <rect class="r-void" x="54" y="132" width="12" height="12" rx="2"/>
@@ -405,6 +404,7 @@
 <rect class="r-void" x="819" y="162" width="12" height="12" rx="2"/>
 <rect class="r2" x="834" y="72" width="12" height="12" rx="2"/>
 <rect class="r-void" x="834" y="87" width="12" height="12" rx="2"/>
+<rect class="r-void" x="834" y="102" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Premier League and Champions League. Blank days had no match</text>
 <text class="note end" x="810.2" y="194">Lost</text>
 <rect class="r0" x="816.2" y="184" width="12" height="12" rx="2"/>
