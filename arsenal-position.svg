@@ -43,7 +43,6 @@
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="p2" x="54" y="72" width="12" height="12" rx="2"/>
 <rect class="p2" x="54" y="87" width="12" height="12" rx="2"/>
 <rect class="p2" x="54" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="54" y="117" width="12" height="12" rx="2"/>
@@ -408,6 +407,7 @@
 <rect class="p5" x="819" y="147" width="12" height="12" rx="2"/>
 <rect class="p5" x="819" y="162" width="12" height="12" rx="2"/>
 <rect class="p5" x="834" y="72" width="12" height="12" rx="2"/>
+<rect class="p5" x="834" y="87" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Position after each matchday, held until the next. Gold is the trophy, not the table</text>
 <text class="note end" x="725.6" y="194">Bottom half</text>
 <rect class="p0" x="731.6" y="184" width="12" height="12" rx="2"/>
