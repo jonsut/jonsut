@@ -27,7 +27,6 @@
 <text class="head" x="27" y="22"><tspan class="strong">London Rainfall.</tspan>&#160;0% more rain than average in the last year</text>
 <rect class="card" x="0.5" y="34.5" width="899" height="176" rx="6"/>
 <text class="note end" x="884" y="22">Redrawn daily by 8am UK</text>
-<text class="axis" x="54" y="62">Oct</text>
 <text class="axis" x="114" y="62">Nov</text>
 <text class="axis" x="189" y="62">Dec</text>
 <text class="axis" x="249" y="62">Jan</text>
@@ -42,7 +41,6 @@
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="r2" x="54" y="87" width="12" height="12" rx="2"/>
 <rect class="r2" x="54" y="102" width="12" height="12" rx="2"/>
 <rect class="r2" x="54" y="117" width="12" height="12" rx="2"/>
 <rect class="r2" x="54" y="132" width="12" height="12" rx="2"/>
@@ -407,7 +405,8 @@
 <rect class="r2" x="819" y="162" width="12" height="12" rx="2"/>
 <rect class="r1" x="834" y="72" width="12" height="12" rx="2"/>
 <rect class="r1" x="834" y="87" width="12" height="12" rx="2"/>
-<rect class="newest" x="832" y="85" width="16" height="16" rx="4"/>
+<rect class="r1" x="834" y="102" width="12" height="12" rx="2"/>
+<rect class="newest" x="832" y="100" width="16" height="16" rx="4"/>
 <text class="note" x="54" y="194">30-day totals against the 1991-2020 normal</text>
 <text class="note end" x="760.4" y="194">Drier</text>
 <rect class="r0" x="766.4" y="184" width="12" height="12" rx="2"/>

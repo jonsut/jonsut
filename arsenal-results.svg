@@ -25,7 +25,6 @@
 <text class="head" x="27" y="22"><tspan class="strong">Arsenal Results.</tspan>&#160;36 won, 9 drawn, 6 lost in 51 matches</text>
 <rect class="card" x="0.5" y="34.5" width="899" height="176" rx="6"/>
 <text class="note end" x="884" y="22">Redrawn daily by 8am UK</text>
-<text class="axis" x="54" y="62">Oct</text>
 <text class="axis" x="114" y="62">Nov</text>
 <text class="axis" x="189" y="62">Dec</text>
 <text class="axis" x="249" y="62">Jan</text>
@@ -40,7 +39,6 @@
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="r-void" x="54" y="87" width="12" height="12" rx="2"/>
 <rect class="r2" x="54" y="102" width="12" height="12" rx="2"/>
 <rect class="r-void" x="54" y="117" width="12" height="12" rx="2"/>
 <rect class="r-void" x="54" y="132" width="12" height="12" rx="2"/>
@@ -405,6 +403,7 @@
 <rect class="r-void" x="819" y="162" width="12" height="12" rx="2"/>
 <rect class="r-void" x="834" y="72" width="12" height="12" rx="2"/>
 <rect class="r-void" x="834" y="87" width="12" height="12" rx="2"/>
+<rect class="r-void" x="834" y="102" width="12" height="12" rx="2"/>
 <text class="note" x="54" y="194">Premier League and Champions League. Blank days had no match</text>
 <text class="note end" x="810.2" y="194">Lost</text>
 <rect class="r0" x="816.2" y="184" width="12" height="12" rx="2"/>
