@@ -7,7 +7,7 @@ Most recently at Amazon, building applied-AI and real-time products from prototy
 More at [jonsut.co.uk](https://jonsut.co.uk) · [LinkedIn](https://www.linkedin.com/in/jon-sutton-b11251147)
 
 <!-- TODAY:START -->
-<img src="cover.svg" alt="Yesterday in London it was 18.6°C, which is 3.9 degrees above average. It was the warmest 14th of October in 8 years." width="900">
+<img src="cover.svg" alt="Yesterday in London it was 21.1°C, which is 6.8 degrees above average. It was the warmest 15th of October in 86 years." width="900">
 <!-- TODAY:END -->
 
 <br><br><br>
