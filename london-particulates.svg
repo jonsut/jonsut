@@ -42,7 +42,6 @@
 <text class="axis end" x="46" y="82">Mon</text>
 <text class="axis end" x="46" y="112">Wed</text>
 <text class="axis end" x="46" y="142">Fri</text>
-<rect class="p1" x="54" y="132" width="12" height="12" rx="2"/>
 <rect class="p0" x="54" y="147" width="12" height="12" rx="2"/>
 <rect class="p0" x="54" y="162" width="12" height="12" rx="2"/>
 <rect class="p0" x="69" y="72" width="12" height="12" rx="2"/>
@@ -57,7 +56,7 @@
 <rect class="p1" x="84" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="84" y="117" width="12" height="12" rx="2"/>
 <rect class="p2" x="84" y="132" width="12" height="12" rx="2"/>
-<rect class="p1" x="84" y="147" width="12" height="12" rx="2"/>
+<rect class="p2" x="84" y="147" width="12" height="12" rx="2"/>
 <rect class="p2" x="84" y="162" width="12" height="12" rx="2"/>
 <rect class="p0" x="99" y="72" width="12" height="12" rx="2"/>
 <rect class="p1" x="99" y="87" width="12" height="12" rx="2"/>
@@ -83,7 +82,7 @@
 <rect class="p0" x="144" y="72" width="12" height="12" rx="2"/>
 <rect class="p1" x="144" y="87" width="12" height="12" rx="2"/>
 <rect class="p2" x="144" y="102" width="12" height="12" rx="2"/>
-<rect class="p1" x="144" y="117" width="12" height="12" rx="2"/>
+<rect class="p2" x="144" y="117" width="12" height="12" rx="2"/>
 <rect class="p2" x="144" y="132" width="12" height="12" rx="2"/>
 <rect class="p0" x="144" y="147" width="12" height="12" rx="2"/>
 <rect class="p1" x="144" y="162" width="12" height="12" rx="2"/>
@@ -98,7 +97,7 @@
 <rect class="p2" x="174" y="87" width="12" height="12" rx="2"/>
 <rect class="p4" x="174" y="102" width="12" height="12" rx="2"/>
 <rect class="p0" x="174" y="117" width="12" height="12" rx="2"/>
-<rect class="p1" x="174" y="132" width="12" height="12" rx="2"/>
+<rect class="p2" x="174" y="132" width="12" height="12" rx="2"/>
 <rect class="p3" x="174" y="147" width="12" height="12" rx="2"/>
 <rect class="p3" x="174" y="162" width="12" height="12" rx="2"/>
 <rect class="p4" x="189" y="72" width="12" height="12" rx="2"/>
@@ -112,12 +111,12 @@
 <rect class="p1" x="204" y="87" width="12" height="12" rx="2"/>
 <rect class="p4" x="204" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="204" y="117" width="12" height="12" rx="2"/>
-<rect class="p0" x="204" y="132" width="12" height="12" rx="2"/>
+<rect class="p1" x="204" y="132" width="12" height="12" rx="2"/>
 <rect class="p1" x="204" y="147" width="12" height="12" rx="2"/>
-<rect class="p1" x="204" y="162" width="12" height="12" rx="2"/>
+<rect class="p2" x="204" y="162" width="12" height="12" rx="2"/>
 <rect class="p2" x="219" y="72" width="12" height="12" rx="2"/>
-<rect class="p4" x="219" y="87" width="12" height="12" rx="2"/>
-<rect class="p0" x="219" y="102" width="12" height="12" rx="2"/>
+<rect class="p3" x="219" y="87" width="12" height="12" rx="2"/>
+<rect class="p1" x="219" y="102" width="12" height="12" rx="2"/>
 <rect class="p4" x="219" y="117" width="12" height="12" rx="2"/>
 <rect class="p1" x="219" y="132" width="12" height="12" rx="2"/>
 <rect class="p3" x="219" y="147" width="12" height="12" rx="2"/>
@@ -129,7 +128,7 @@
 <rect class="p0" x="234" y="132" width="12" height="12" rx="2"/>
 <rect class="p1" x="234" y="147" width="12" height="12" rx="2"/>
 <rect class="p4" x="234" y="162" width="12" height="12" rx="2"/>
-<rect class="p4" x="249" y="72" width="12" height="12" rx="2"/>
+<rect class="p3" x="249" y="72" width="12" height="12" rx="2"/>
 <rect class="p0" x="249" y="87" width="12" height="12" rx="2"/>
 <rect class="p0" x="249" y="102" width="12" height="12" rx="2"/>
 <rect class="p0" x="249" y="117" width="12" height="12" rx="2"/>
@@ -138,7 +137,7 @@
 <rect class="p0" x="249" y="162" width="12" height="12" rx="2"/>
 <rect class="p4" x="264" y="72" width="12" height="12" rx="2"/>
 <rect class="p0" x="264" y="87" width="12" height="12" rx="2"/>
-<rect class="p2" x="264" y="102" width="12" height="12" rx="2"/>
+<rect class="p3" x="264" y="102" width="12" height="12" rx="2"/>
 <rect class="p4" x="264" y="117" width="12" height="12" rx="2"/>
 <rect class="p1" x="264" y="132" width="12" height="12" rx="2"/>
 <rect class="p1" x="264" y="147" width="12" height="12" rx="2"/>
@@ -161,13 +160,13 @@
 <rect class="p0" x="309" y="87" width="12" height="12" rx="2"/>
 <rect class="p0" x="309" y="102" width="12" height="12" rx="2"/>
 <rect class="p1" x="309" y="117" width="12" height="12" rx="2"/>
-<rect class="p2" x="309" y="132" width="12" height="12" rx="2"/>
+<rect class="p1" x="309" y="132" width="12" height="12" rx="2"/>
 <rect class="p0" x="309" y="147" width="12" height="12" rx="2"/>
 <rect class="p0" x="309" y="162" width="12" height="12" rx="2"/>
 <rect class="p1" x="324" y="72" width="12" height="12" rx="2"/>
 <rect class="p3" x="324" y="87" width="12" height="12" rx="2"/>
 <rect class="p4" x="324" y="102" width="12" height="12" rx="2"/>
-<rect class="p3" x="324" y="117" width="12" height="12" rx="2"/>
+<rect class="p2" x="324" y="117" width="12" height="12" rx="2"/>
 <rect class="p0" x="324" y="132" width="12" height="12" rx="2"/>
 <rect class="p0" x="324" y="147" width="12" height="12" rx="2"/>
 <rect class="p0" x="324" y="162" width="12" height="12" rx="2"/>
@@ -214,7 +213,7 @@
 <rect class="p0" x="414" y="147" width="12" height="12" rx="2"/>
 <rect class="p0" x="414" y="162" width="12" height="12" rx="2"/>
 <rect class="p1" x="429" y="72" width="12" height="12" rx="2"/>
-<rect class="p1" x="429" y="87" width="12" height="12" rx="2"/>
+<rect class="p0" x="429" y="87" width="12" height="12" rx="2"/>
 <rect class="p0" x="429" y="102" width="12" height="12" rx="2"/>
 <rect class="p0" x="429" y="117" width="12" height="12" rx="2"/>
 <rect class="p0" x="429" y="132" width="12" height="12" rx="2"/>
@@ -260,7 +259,7 @@
 <rect class="p4" x="519" y="102" width="12" height="12" rx="2"/>
 <rect class="p4" x="519" y="117" width="12" height="12" rx="2"/>
 <rect class="p4" x="519" y="132" width="12" height="12" rx="2"/>
-<rect class="p3" x="519" y="147" width="12" height="12" rx="2"/>
+<rect class="p2" x="519" y="147" width="12" height="12" rx="2"/>
 <rect class="p1" x="519" y="162" width="12" height="12" rx="2"/>
 <rect class="p2" x="534" y="72" width="12" height="12" rx="2"/>
 <rect class="p1" x="534" y="87" width="12" height="12" rx="2"/>
@@ -269,7 +268,7 @@
 <rect class="p1" x="534" y="132" width="12" height="12" rx="2"/>
 <rect class="p1" x="534" y="147" width="12" height="12" rx="2"/>
 <rect class="p2" x="534" y="162" width="12" height="12" rx="2"/>
-<rect class="p2" x="549" y="72" width="12" height="12" rx="2"/>
+<rect class="p1" x="549" y="72" width="12" height="12" rx="2"/>
 <rect class="p1" x="549" y="87" width="12" height="12" rx="2"/>
 <rect class="p1" x="549" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="549" y="117" width="12" height="12" rx="2"/>
@@ -277,7 +276,7 @@
 <rect class="p2" x="549" y="147" width="12" height="12" rx="2"/>
 <rect class="p1" x="549" y="162" width="12" height="12" rx="2"/>
 <rect class="p3" x="564" y="72" width="12" height="12" rx="2"/>
-<rect class="p4" x="564" y="87" width="12" height="12" rx="2"/>
+<rect class="p3" x="564" y="87" width="12" height="12" rx="2"/>
 <rect class="p1" x="564" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="564" y="117" width="12" height="12" rx="2"/>
 <rect class="p3" x="564" y="132" width="12" height="12" rx="2"/>
@@ -312,7 +311,7 @@
 <rect class="p3" x="624" y="147" width="12" height="12" rx="2"/>
 <rect class="p1" x="624" y="162" width="12" height="12" rx="2"/>
 <rect class="p2" x="639" y="72" width="12" height="12" rx="2"/>
-<rect class="p3" x="639" y="87" width="12" height="12" rx="2"/>
+<rect class="p4" x="639" y="87" width="12" height="12" rx="2"/>
 <rect class="p4" x="639" y="102" width="12" height="12" rx="2"/>
 <rect class="p4" x="639" y="117" width="12" height="12" rx="2"/>
 <rect class="p4" x="639" y="132" width="12" height="12" rx="2"/>
@@ -358,13 +357,13 @@
 <rect class="p2" x="729" y="102" width="12" height="12" rx="2"/>
 <rect class="p1" x="729" y="117" width="12" height="12" rx="2"/>
 <rect class="p1" x="729" y="132" width="12" height="12" rx="2"/>
-<rect class="p1" x="729" y="147" width="12" height="12" rx="2"/>
+<rect class="p2" x="729" y="147" width="12" height="12" rx="2"/>
 <rect class="p3" x="729" y="162" width="12" height="12" rx="2"/>
 <rect class="p2" x="744" y="72" width="12" height="12" rx="2"/>
 <rect class="p1" x="744" y="87" width="12" height="12" rx="2"/>
 <rect class="p1" x="744" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="744" y="117" width="12" height="12" rx="2"/>
-<rect class="p1" x="744" y="132" width="12" height="12" rx="2"/>
+<rect class="p2" x="744" y="132" width="12" height="12" rx="2"/>
 <rect class="p2" x="744" y="147" width="12" height="12" rx="2"/>
 <rect class="p1" x="744" y="162" width="12" height="12" rx="2"/>
 <rect class="p1" x="759" y="72" width="12" height="12" rx="2"/>
@@ -388,8 +387,8 @@
 <rect class="p2" x="789" y="132" width="12" height="12" rx="2"/>
 <rect class="p3" x="789" y="147" width="12" height="12" rx="2"/>
 <rect class="p4" x="789" y="162" width="12" height="12" rx="2"/>
-<rect class="p3" x="804" y="72" width="12" height="12" rx="2"/>
-<rect class="p3" x="804" y="87" width="12" height="12" rx="2"/>
+<rect class="p2" x="804" y="72" width="12" height="12" rx="2"/>
+<rect class="p4" x="804" y="87" width="12" height="12" rx="2"/>
 <rect class="p4" x="804" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="804" y="117" width="12" height="12" rx="2"/>
 <rect class="p1" x="804" y="132" width="12" height="12" rx="2"/>
@@ -397,17 +396,18 @@
 <rect class="p2" x="804" y="162" width="12" height="12" rx="2"/>
 <rect class="p2" x="819" y="72" width="12" height="12" rx="2"/>
 <rect class="p1" x="819" y="87" width="12" height="12" rx="2"/>
-<rect class="p3" x="819" y="102" width="12" height="12" rx="2"/>
+<rect class="p2" x="819" y="102" width="12" height="12" rx="2"/>
 <rect class="p2" x="819" y="117" width="12" height="12" rx="2"/>
 <rect class="p1" x="819" y="132" width="12" height="12" rx="2"/>
 <rect class="p2" x="819" y="147" width="12" height="12" rx="2"/>
 <rect class="p1" x="819" y="162" width="12" height="12" rx="2"/>
 <rect class="p4" x="834" y="72" width="12" height="12" rx="2"/>
 <rect class="p4" x="834" y="87" width="12" height="12" rx="2"/>
-<rect class="p2" x="834" y="102" width="12" height="12" rx="2"/>
+<rect class="p1" x="834" y="102" width="12" height="12" rx="2"/>
 <rect class="p1" x="834" y="117" width="12" height="12" rx="2"/>
 <rect class="p0" x="834" y="132" width="12" height="12" rx="2"/>
-<rect class="newest" x="832" y="130" width="16" height="16" rx="4"/>
+<rect class="p0" x="834" y="147" width="12" height="12" rx="2"/>
+<rect class="newest" x="832" y="145" width="16" height="16" rx="4"/>
 <text class="note" x="54" y="194">PM2.5 daily mean against the 2015-2025 normal</text>
 <text class="note end" x="753.8" y="194">Cleaner</text>
 <rect class="p0" x="759.8" y="184" width="12" height="12" rx="2"/>
