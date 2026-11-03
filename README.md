@@ -7,7 +7,7 @@ Most recently at Amazon, building applied-AI and real-time products from prototy
 More at [jonsut.co.uk](https://jonsut.co.uk) · [LinkedIn](https://www.linkedin.com/in/jon-sutton-b11251147)
 
 <!-- TODAY:START -->
-<img src="cover.svg" alt="Yesterday in London it was 10.1°C, which is 2.2 degrees below average. It was the coldest 1st of November in 18 years." width="900">
+<img src="cover.svg" alt="Yesterday in London it was 11.8°C, which is 0.2 degrees below average. It was the coldest 2nd of November in 3 years." width="900">
 <!-- TODAY:END -->
 
 <br><br><br>
